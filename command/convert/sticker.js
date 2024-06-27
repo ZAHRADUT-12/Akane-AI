@@ -1,5 +1,6 @@
 export default {
   command: ["s", "sticker", "sticker"],
+  description: "Convert image/video to sticker",
   name: "sticker",
   tags: "convert",
 

@@ -207,6 +207,11 @@ async function start() {
   // add contacts update to store
   conn.ev.on("contacts.update", (update) => {
     for (let contact of update) {
+      if (!contact.id.endsWith('.net')) {
+      console.warn(`Skipping contact id: ${contact.id} as it does not end with .net`);
+      continue;
+      }	
+      
       let id;
       try {
         id = jidNormalizedUser(contact.id);

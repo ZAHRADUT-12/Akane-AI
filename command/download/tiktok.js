@@ -1,5 +1,5 @@
 export default {
-  command: ["tiktok"],
+  command: ["tiktok", "tt"],
   description: "Download TikTok video",
   example: "Contoh: %p%cmd <TikTok URL>", //%p = prefix, %cmd = command, %text = teks
   name: "tiktok",

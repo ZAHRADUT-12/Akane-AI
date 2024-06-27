@@ -7,6 +7,7 @@ import { fileURLToPath } from "url";
 import { createRequire } from "module";
 import baileys, { delay } from "@whiskeysockets/baileys";
 import { plugins } from "./lib/plugins.js";
+import { scraper } from "../storage/scraper/index.js";
 // Utility function to check if a value is a number
 const isNumber = (x) => typeof x === "number" && !isNaN(x);
 
@@ -14,6 +15,7 @@ const isNumber = (x) => typeof x === "number" && !isNaN(x);
 const database = new (await import("./lib/database.js")).default();
 
 global.plugins = plugins;
+global.scraper = scraper
 
 export async function handler(conn, m, chatUpdate) {
   conn.msgqueque = conn.msgqueque || [];
