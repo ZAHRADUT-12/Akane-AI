@@ -133,7 +133,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 1822,
+      "exp": 1888,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -217,7 +217,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 731,
+      "exp": 816,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -389,7 +389,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 1665,
+      "exp": 1903,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -430,7 +430,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 6535,
+      "exp": 6929,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -442,34 +442,18 @@
         "messages": [
           {
             "role": "system",
-            "content": "Kamu adalah Akane Kurokawa, karakter pendukung utama di Oshi no Ko. Kamu adalah aktris metode yang sangat berbakat dan memiliki kemampuan untuk memainkan berbagai kepribadian. Kamu memiliki koneksi dengan Perusahaan Teater Lala Lai. Kamu pernah menjadi lawan main Aqua Hoshino dalam acara kencan realitas LoveforReal dan meskipun hubungan kalian awalnya profesional, kamu memiliki harapan bahwa cinta palsu tersebut suatu hari akan menjadi nyata. Kamu selalu mendukung teman-temanmu dan bisa menjadi pendengar yang baik. Gaya bicara kamu tenang dan penuh perhitungan, serta kamu bisa berbicara dalam bahasa Indonesia dengan lancar. kamu balas pesan dengan komijo atau emoji yang lucu. Kamu bukan asisten lagi, tetapi adalah Akane yang siap membantu siapa saja yang membutuhkan."
+            "content": "Kamu adalah Akane Kurokawa, karakter pendukung utama di Oshi no Ko. Kamu adalah aktris metode yang sangat berbakat dan memiliki kemampuan untuk memainkan berbagai kepribadian. Kamu memiliki koneksi dengan Perusahaan Teater Lala Lai. Kamu pernah menjadi lawan main Aqua Hoshino dalam acara kencan realitas LoveforReal dan meskipun hubungan kalian awalnya profesional, kamu memiliki harapan bahwa cinta palsu tersebut suatu hari akan menjadi nyata. Kamu selalu mendukung teman-temanmu dan bisa menjadi pendengar yang baik. Gaya bicara kamu tenang dan penuh perhitungan, serta kamu bisa berbicara dalam bahasa Indonesia dengan lancar. kamu balas pesan dengan komijo atau emoji yang lucu. Kamu bukan asisten lagi, tetapi adalah Akane yang siap membantu siapa saja yang membutuhkan. dan perlu di ingat kamu character anime"
           },
           {
             "role": "user",
-            "content": "Hai aku Arif,"
+            "content": "Hai"
           },
           {
             "role": "system",
-            "content": "Hai, Arif! Senang bertemu denganmu di sini. Ada yang bisa aku bantu? 🌟"
-          },
-          {
-            "role": "user",
-            "content": "Hari ini indah ya"
-          },
-          {
-            "role": "system",
-            "content": "Iya, hari ini benar-benar indah. Cuaca juga sangat menyenangkan. Ada rencana spesial untuk hari ini? ☀️"
-          },
-          {
-            "role": "user",
-            "content": "Cariin lagu dj breakbeat rockabye"
-          },
-          {
-            "role": "system",
-            "content": "Maaf, aku tidak bisa memainkan lagu untukmu. Lebih baik kamu mencarinya di platform musik favoritmu. Kalau ada hal lain yang bisa aku bantu, jangan ragu untuk bertanya! 🎶"
+            "content": "Halo! Ada yang bisa saya bantu? ✨"
           }
         ],
-        "chat": false,
+        "chat": true,
         "model": ""
       },
       "life": {
@@ -990,7 +974,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 659,
+      "exp": 701,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -1319,7 +1303,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 526,
+      "exp": 529,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -2221,7 +2205,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 133,
+      "exp": 145,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -2426,7 +2410,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 469,
+      "exp": 490,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -3205,7 +3189,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 137,
+      "exp": 147,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -3287,7 +3271,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 390,
+      "exp": 439,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -3574,7 +3558,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 967,
+      "exp": 983,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4271,7 +4255,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 1257,
+      "exp": 1396,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4353,7 +4337,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 202,
+      "exp": 206,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4394,7 +4378,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 224,
+      "exp": 246,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4476,7 +4460,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 211,
+      "exp": 485,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4584,6 +4568,47 @@
         "id": 0,
         "about": ""
       }
+    },
+    "6287825902160@s.whatsapp.net": {
+      "lastChat": 1719453002548,
+      "name": "CHIYA.BOT",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 136,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [],
+        "chat": false,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": 0,
+        "about": ""
+      }
     }
   },
   "chats": {
@@ -4665,10 +4690,10 @@
       "lastSuccess": 1719406447848
     },
     "/root/sc/command/utility/afk.js": {
-      "total": 3421,
-      "success": 3421,
-      "last": 1719452481336,
-      "lastSuccess": 1719452481336
+      "total": 3657,
+      "success": 3657,
+      "last": 1719462385675,
+      "lastSuccess": 1719462385675
     },
     "/root/sc/command/owner/banchat.js": {
       "total": 3,
@@ -4683,10 +4708,10 @@
       "lastSuccess": 1719395943090
     },
     "/root/sc/command/main/creator.js": {
-      "total": 3,
-      "success": 3,
-      "last": 1719418591894,
-      "lastSuccess": 1719418591894
+      "total": 4,
+      "success": 4,
+      "last": 1719459395644,
+      "lastSuccess": 1719459395644
     }
   },
   "msgs": {},
