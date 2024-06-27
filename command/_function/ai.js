@@ -5,12 +5,38 @@ import natural from 'natural';
 import { areJidsSameUser } from '@whiskeysockets/baileys';
 
 export async function before(m) {
-    let user = global.db.data.users[m.sender].openai;
+    let user = global.db.data.users[m.sender] ? global.db.data.users[m.sender].openai : null;
     let isCmd = m.body.startsWith(m.prefix);
 
     if (m.isBaileys) return;
+    if (!m.quoted || !m.quoted.key || !m.quoted.key.fromMe) return;
+    
+    if (checkImageCommand(m.body)) {
+        const query = extractImageQuery(m.body);
 
-    if (checkText(m.body) === "ok") {
+        m.reply(`Oke, tunggu sebentar ya~ akane sedang mencari gambar "${query}" untukmu!`);
+
+        try {
+            const response = await func.fetchJson(API("itzpire", "/search/pinterest", { query }))
+
+            if (!response || response.status !== "success" || !response.data) {
+              return m.reply("Maaf, terjadi kesalahan dalam mencari gambar. -_");
+            }
+            
+            const images = response.data 
+            
+            if (images.length > 0) { 
+                const imageUrl = images[Math.floor(Math.random() * images.length)];
+
+                await conn.sendQuick(m.chat, `Berikut adalah gambar yang kamu cari: ${query}`, wm, imageUrl, [["Next", `.pinterest ${query}`]], m)
+            } else {
+                m.reply(`Maaf, tidak dapat menemukan gambar untuk "${query}".`);
+            }
+        } catch (e) {
+            console.error(e);
+            m.reply(`Maaf, terjadi kesalahan dalam mencari gambar.`);
+        }
+    } else if (checkText(m.body) === "ok") {
         async function findSong(text) {
             const tokenizer = new natural.WordTokenizer();
             const tokens = tokenizer.tokenize(text.toLowerCase());
@@ -77,8 +103,7 @@ export async function before(m) {
             if (m.body.includes(">") || m.body.includes("=>") || m.body.includes("$")) return;
             if (/^.*false|disnable|(turn)?off|0/i.test(m.body)) return;
             if (!m.body) return;
-            if (!m.quoted.key.fromMe) return;
-
+            
             const chatBot = user.messages || [];
 
             let sifat = 
@@ -130,4 +155,24 @@ function checkText(text) {
     } else {
         return "no";
     }
+}
+
+function checkImageCommand(text) {
+    const lowerCaseText = text.toLowerCase();
+    return lowerCaseText.includes("carigambar") || lowerCaseText.includes("carikan gambar");
+}
+
+function extractImageQuery(text) {
+    const lowerCaseText = text.toLowerCase();
+    const commandKeywords = ["carigambar", "carikan gambar"];
+    let query = lowerCaseText;
+
+    for (const keyword of commandKeywords) {
+        if (lowerCaseText.includes(keyword)) {
+            query = lowerCaseText.split(keyword)[1].trim();
+            break;
+        }
+    }
+
+    return query;
 }

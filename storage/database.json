@@ -133,7 +133,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 1888,
+      "exp": 2290,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -175,7 +175,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 290,
+      "exp": 342,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -217,7 +217,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 816,
+      "exp": 1337,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -389,7 +389,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 1903,
+      "exp": 1992,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -430,7 +430,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 6929,
+      "exp": 7757,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -451,6 +451,38 @@
           {
             "role": "system",
             "content": "Halo! Ada yang bisa saya bantu? ✨"
+          },
+          {
+            "role": "user",
+            "content": "Apakah ddos bisa melalui ip, contoh ip vps"
+          },
+          {
+            "role": "system",
+            "content": "Distributed Denial of Service (DDoS) adalah serangan yang bertujuan untuk membuat layanan jaringan menjadi tidak tersedia bagi pengguna yang sah. Serangan DDoS dapat dilakukan melalui alamat IP, termasuk IP dari VPS (Virtual Private Server). Dalam serangan DDoS, pelaku menggunakan sumber daya (misalnya botnet) untuk mengirimkan jumlah lalu lintas yang sangat besar ke alamat IP target sehingga menyebabkan layanan jaringan menjadi tidak bisa diakses.\n\nNamun, penting untuk diingat bahwa melakukan serangan DDoS adalah ilegal dan melanggar hukum. Melakukan serangan DDoS dapat menyebabkan konsekuensi hukum serius. Jika kamu mengalami atau mengetahui tentang serangan DDoS, lebih baik menghubungi penyedia layanan jaringan atau sumber keamanan yang kompeten.\n\nJika ada hal lain yang ingin kamu tanyakan, silakan beritahu saya dengan senang hati! ✨"
+          },
+          {
+            "role": "user",
+            "content": "Hai"
+          },
+          {
+            "role": "system",
+            "content": "Halo! Ada yang bisa saya bantu hari ini? 😊"
+          },
+          {
+            "role": "user",
+            "content": "Lagi apa"
+          },
+          {
+            "role": "system",
+            "content": "Saat ini saya sedang berada di sini dan siap membantu siapa pun yang membutuhkan! Apakah ada hal spesifik yang ingin kamu tanyakan atau bicarakan dengan saya? ✨"
+          },
+          {
+            "role": "user",
+            "content": "Tolong ambilkan info update"
+          },
+          {
+            "role": "system",
+            "content": "Untuk info update apa, ya? Boleh dijelaskan lebih detail supaya saya bisa membantu dengan lebih baik? ✨"
           }
         ],
         "chat": true,
@@ -811,7 +843,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 161,
+      "exp": 415,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -852,7 +884,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 312,
+      "exp": 349,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -2328,7 +2360,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 164,
+      "exp": 178,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4255,7 +4287,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 1396,
+      "exp": 1987,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4378,7 +4410,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 246,
+      "exp": 566,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4460,7 +4492,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 485,
+      "exp": 614,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4609,6 +4641,47 @@
         "id": 0,
         "about": ""
       }
+    },
+    "5216184538367@s.whatsapp.net": {
+      "lastChat": 1719464197790,
+      "name": "Said",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 105,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [],
+        "chat": false,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": "",
+        "about": ""
+      }
     }
   },
   "chats": {
@@ -4690,10 +4763,10 @@
       "lastSuccess": 1719406447848
     },
     "/root/sc/command/utility/afk.js": {
-      "total": 3657,
-      "success": 3657,
-      "last": 1719462385675,
-      "lastSuccess": 1719462385675
+      "total": 4163,
+      "success": 4163,
+      "last": 1719473086028,
+      "lastSuccess": 1719473086028
     },
     "/root/sc/command/owner/banchat.js": {
       "total": 3,
@@ -4712,6 +4785,12 @@
       "success": 4,
       "last": 1719459395644,
       "lastSuccess": 1719459395644
+    },
+    "/root/sc/command/download/tiktok.js": {
+      "total": 3,
+      "success": 3,
+      "last": 1719471265654,
+      "lastSuccess": 1719471265654
     }
   },
   "msgs": {},
