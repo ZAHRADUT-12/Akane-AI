@@ -50,7 +50,7 @@ Pilih kategori di bawah untuk melihat perintah yang tersedia:`;
         }
       ];
 
-      return conn.sendListM(m.chat, body, wm, sections, "", m, {
+      return conn.sendListM(m.chat, body, wm, "https://telegra.ph/file/efba59850e2085da6cede.jpg", sections, m, {
         contextInfo: {
           mentionedJid: [m.sender],
         }   
