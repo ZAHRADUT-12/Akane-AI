@@ -208,9 +208,6 @@ async function start() {
   conn.ev.on("contacts.update", (update) => {
     for (let contact of update) {
       if (!contact.id.endsWith(".net")) {
-        console.warn(
-          `Skipping contact id: ${contact.id} as it does not end with .net`,
-        );
         continue;
       }
 
@@ -218,26 +215,13 @@ async function start() {
       try {
         id = jidNormalizedUser(contact.id);
         if (!id) {
-          console.error(
-            `jidNormalizedUser failed or returned undefined for contact id: ${contact.id}`,
-          );
           continue;
         }
       } catch (error) {
-        console.error(
-          `Error normalizing JID for contact id: ${contact.id}`,
-          error,
-        );
         continue;
       }
 
       if (store && store.contacts) {
-        if (!store.contacts[id]) {
-          console.warn(
-            `No existing contact found for id: ${id}. Creating new contact entry.`,
-          );
-        }
-
         store.contacts[id] = {
           ...(store.contacts?.[id] || {}),
           ...(contact || {}),

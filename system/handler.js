@@ -150,7 +150,7 @@ export async function handler(conn, m, chatUpdate) {
             m.reply(
               plugin.example
                 .replace(/%p/gi, m.prefix)
-                .replace(/%cmd/gi, plugin.name)
+                .replace(/%cmd/gi, m.command)
                 .replace(/%text/gi, text)
             );
             continue;

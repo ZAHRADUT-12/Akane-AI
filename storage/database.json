@@ -133,7 +133,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 3258,
+      "exp": 3306,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -217,7 +217,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 3786,
+      "exp": 3939,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -389,7 +389,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 2509,
+      "exp": 2697,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -430,7 +430,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 11561,
+      "exp": 12329,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -879,7 +879,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 1451,
+      "exp": 1513,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -1071,7 +1071,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 973,
+      "exp": 1401,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -1154,7 +1154,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 100,
+      "exp": 109,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -1236,7 +1236,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 124,
+      "exp": 135,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -1728,7 +1728,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 173,
+      "exp": 179,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -2589,7 +2589,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 133,
+      "exp": 185,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -3286,7 +3286,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 170,
+      "exp": 209,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -3491,7 +3491,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 102,
+      "exp": 131,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -3514,7 +3514,7 @@
         "lastkencan": 0,
         "money": 0,
         "gamepas": 0,
-        "id": "",
+        "id": 0,
         "about": ""
       }
     },
@@ -3696,7 +3696,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 113,
+      "exp": 120,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -3983,7 +3983,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 299,
+      "exp": 320,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4352,7 +4352,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 4919,
+      "exp": 4940,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4393,7 +4393,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 173,
+      "exp": 180,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4475,7 +4475,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 867,
+      "exp": 881,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4680,7 +4680,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 194,
+      "exp": 205,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4844,7 +4844,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 885,
+      "exp": 996,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -5507,7 +5507,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 115,
+      "exp": 125,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -5657,10 +5657,10 @@
       "lastSuccess": 1718979482516
     },
     "/root/sc/command/main/menu.js": {
-      "total": 20,
-      "success": 20,
-      "last": 1719642674555,
-      "lastSuccess": 1719642674555
+      "total": 21,
+      "success": 21,
+      "last": 1719658048309,
+      "lastSuccess": 1719658048309
     },
     "/root/sc/command/owner/savefile.js": {
       "total": 301,
@@ -5669,10 +5669,10 @@
       "lastSuccess": 1719406447848
     },
     "/root/sc/command/utility/afk.js": {
-      "total": 7011,
-      "success": 7011,
-      "last": 1719649911816,
-      "lastSuccess": 1719649911816
+      "total": 7351,
+      "success": 7351,
+      "last": 1719662583967,
+      "lastSuccess": 1719662583967
     },
     "/root/sc/command/owner/banchat.js": {
       "total": 3,
@@ -5699,10 +5699,10 @@
       "lastSuccess": 1719471265654
     },
     "/root/sc/command/tools/tourl.js": {
-      "total": 4,
-      "success": 4,
-      "last": 1719547588820,
-      "lastSuccess": 1719547588820
+      "total": 5,
+      "success": 5,
+      "last": 1719656229456,
+      "lastSuccess": 1719656229456
     },
     "/root/sc/command/convert/sticker.js": {
       "total": 5,
@@ -5729,10 +5729,10 @@
       "lastSuccess": 1719631452959
     },
     "/root/sc/command/main/ping.js": {
-      "total": 5,
-      "success": 5,
-      "last": 1719631433450,
-      "lastSuccess": 1719631433450
+      "total": 7,
+      "success": 7,
+      "last": 1719657978106,
+      "lastSuccess": 1719657978106
     },
     "/root/sc/command/group/hidetag.js": {
       "total": 4,
@@ -5741,10 +5741,10 @@
       "lastSuccess": 1719563285814
     },
     "/root/sc/command/tools/removebg.js": {
-      "total": 3,
-      "success": 3,
-      "last": 1719646856724,
-      "lastSuccess": 1719646856724
+      "total": 4,
+      "success": 4,
+      "last": 1719656240170,
+      "lastSuccess": 1719656240170
     }
   },
   "msgs": {},

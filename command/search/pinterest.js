@@ -1,6 +1,6 @@
 export default {
   command: ['pinterest', 'pin'],
-  description: 'Search images or download from Pinterest',
+  description: 'Search images/download from pin',
   name: 'pinterest',
   tags: 'search',
   limit: 1,

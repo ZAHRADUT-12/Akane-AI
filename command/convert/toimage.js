@@ -1,7 +1,7 @@
 export default {
 	command: ["toimg", "toimage"],
   description: "Convert sticker to image",
-  name: "sticker",
+  name: "toimage",
   tags: "convert",
   
   run: async (m) => {
