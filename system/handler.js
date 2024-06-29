@@ -15,13 +15,16 @@ const isNumber = (x) => typeof x === "number" && !isNaN(x);
 const database = new (await import("./lib/database.js")).default();
 
 global.plugins = plugins;
-global.scraper = scraper
+global.scraper = scraper;
+
+import { translate } from "@vitalets/google-translate-api";
 
 export async function handler(conn, m, chatUpdate) {
-  conn.msgqueque = conn.msgqueque || [];
+  conn.msgqueue = conn.msgqueue || [];
   if (!m || typeof m !== "object") return;
 
   try {
+    // Ensure database is loaded properly
     await database.load(m, db);
   } catch (e) {
     conn.logger.error("Database loader Error: ", e);
@@ -31,192 +34,211 @@ export async function handler(conn, m, chatUpdate) {
     m.exp = 0;
     m.limit = false;
 
-    const isPrems = m.isOwner || db.data.users[m.sender]?.premium;
+    // Check if user is premium
+    const isPrems = m.isOwner || db.data.users[m.sender]?.premium || false;
 
-    if (!m.isOwner && db.data.settings.self) return;
-    if (db.data.settings.pconly && m.chat.endsWith("g.us")) return;
-    if (db.data.settings.gconly && !m.chat.endsWith("g.us")) return;
-    if (db.data.settings.autoread) conn.readMessages([m.key]);
-    if (m.isBaileys) return;
-
-    // Message queue handling
-    if (db.data.settings.queque && m.body && !isPrems) {
-      let queque = conn.msgqueque,
+    // Handle message queue based on settings and user permissions
+    if (db.data.settings.queue && m.body && !isPrems) {
+      let queue = conn.msgqueue,
         time = 1000 * 5;
-      let previousID = queque[queque.length - 1];
+      let previousID = queue[queue.length - 1];
 
-      queque.push(m.id || m.key.id);
+      queue.push(m.id || m.key.id);
       setInterval(async () => {
-        if (queque.indexOf(previousID) === -1) clearInterval(conn);
+        if (queue.indexOf(previousID) === -1) clearInterval(conn);
         await delay(time);
       }, time);
     }
 
     // Assign experience points
     m.exp += Math.ceil(Math.random() * 10);
-    let user = db.users && db.users[m.sender];
+    let user = db.data.users && db.data.users[m.sender];
 
+    // Loop through plugins and execute based on conditions
     for (let name in plugins) {
       let plugin = plugins[name];
 
       if (!plugin) continue;
       if (plugin.disabled) continue;
-      if (typeof plugin.all === "function") {
-        try {
+
+      try {
+        // Execute 'all' function of the plugin if defined
+        if (typeof plugin.all === "function") {
           await plugin.all.call(conn, m, { chatUpdate });
-        } catch (e) {
-          console.error(e);
-        }
-      }
-
-      if (typeof plugin.before === "function") {
-        if (await plugin.before.call(conn, m, { chatUpdate })) continue;
-      }
-
-      if (m.prefix) {
-        let { args, text } = m;
-        let isCommand = (m.prefix && m.body.startsWith(m.prefix)) || false;
-        const command = isCommand ? m.command.toLowerCase() : false;
-
-        let isAccept = Array.isArray(plugin.command)
-          ? plugin.command.some((cmd) => cmd === command)
-          : false;
-
-        m.plugin = name;
-        if (!isAccept) continue;
-        if (m.chat in db.data.chats || m.sender in db.data.users) {
-          if (!m.isOwner && db.data.chats[m.chat]?.isBanned) return;
-          if (!m.isOwner && db.data.users[m.sender]?.banned) return;
         }
 
-        if (plugin.owner && !m.isOwner) {
-          m.reply("owner");
-          continue;
+        // Execute 'before' function of the plugin if defined
+        if (typeof plugin.before === "function") {
+          if (await plugin.before.call(conn, m, { chatUpdate })) continue;
         }
 
-        if (plugin.premium && !isPrems) {
-          m.reply("premium");
-          continue;
-        }
+        // Check if message is a command and matches plugin's command
+        if (m.prefix) {
+          let { args, text } = m;
+          let isCommand = (m.prefix && m.body.startsWith(m.prefix)) || false;
+          const command = isCommand ? m.command.toLowerCase() : false;
 
-        if (plugin.group && !m.isGroup) {
-          m.reply("group");
-          continue;
-        }
+          let isAccept = Array.isArray(plugin.command)
+            ? plugin.command.some((cmd) => cmd === command)
+            : false;
 
-        if (plugin.botAdmin && !m.isBotAdmin) {
-          m.reply("botAdmin");
-          continue;
-        }
+          m.plugin = name;
+          if (!isAccept) continue;
 
-        if (plugin.admin && !m.isAdmin) {
-          m.reply("admin");
-          continue;
-        }
+          // Check chat and user settings for restrictions
+          if (m.chat in db.data.chats || m.sender in db.data.users) {
+            if (!m.isOwner && db.data.chats[m.chat]?.isBanned) return;
+            if (!m.isOwner && db.data.users[m.sender]?.banned) return;
+          }
 
-        if (plugin.private && m.isGroup) {
-          m.reply("private");
-          continue;
-        }
+          // Check plugin specific permissions
+          if (plugin.owner && !m.isOwner) {
+            m.reply("owner");
+            continue;
+          }
 
-        if (plugin.register && !user?.registered) {
-          m.reply("register");
-          continue;
-        }
+          if (plugin.premium && !isPrems) {
+            m.reply("premium");
+            continue;
+          }
 
-        if (plugin.quoted && !m.isQuoted) {
-          m.reply("quoted");
-          continue;
-        }
+          if (plugin.group && !m.isGroup) {
+            m.reply("group");
+            continue;
+          }
 
-        m.isCommand = true;
-        let xp = "exp" in plugin ? parseInt(plugin.exp) : 3;
+          if (plugin.botAdmin && !m.isBotAdmin) {
+            m.reply("botAdmin");
+            continue;
+          }
 
-        if (xp < 200) m.exp += xp;
-        if (plugin.loading) m.reply("wait");
-        if (plugin.limit && user.limit < 1 && !isPrems) {
-          m.reply("limit");
-          continue;
-        }
+          if (plugin.admin && !m.isAdmin) {
+            m.reply("admin");
+            continue;
+          }
 
-        if (plugin.example && !text) {
-          m.reply(
-            plugin.example
-              .replace(/%p/gi, m.prefix)
-              .replace(/%cmd/gi, plugin.name)
-              .replace(/%text/gi, text),
-          );
-          continue;
-        }
+          if (plugin.private && m.isGroup) {
+            m.reply("private");
+            continue;
+          }
 
-        let extra = {
-          conn,
-          args,
-          isPrems,
-          command,
-          text,
-          chatUpdate,
-        };
+          if (plugin.register && (!user || !user.registered)) {
+            m.reply("register");
+            continue;
+          }
 
-        try {
-          await plugin.run(m, extra);
-        } catch (e) {
-          console.error(e);
-          m.reply(func.format(e));
-        } finally {
-          if (typeof plugin.after === "function") {
-            try {
-              await plugin.after.call(conn, m, extra);
-            } catch (e) {
-              console.error(e);
+          if (plugin.quoted && !m.isQuoted) {
+            m.reply("quoted");
+            continue;
+          }
+
+          // Handle XP and limit
+          m.isCommand = true;
+          let xp = "exp" in plugin ? parseInt(plugin.exp) : 3;
+
+          if (xp < 200) m.exp += xp;
+          if (plugin.loading) m.reply("wait");
+
+          // Check if plugin has limit and enforce it
+          if (!isPrems && plugin.limit && user.limit < plugin.limit * 1) {
+            m.reply("limit");
+            continue;
+          }
+
+          // Replace placeholders in example message
+          if (plugin.example && !text) {
+            m.reply(
+              plugin.example
+                .replace(/%p/gi, m.prefix)
+                .replace(/%cmd/gi, plugin.name)
+                .replace(/%text/gi, text),
+            );
+            continue;
+          }
+
+          let extra = {
+            conn,
+            args,
+            isPrems,
+            command,
+            text,
+            chatUpdate,
+          };
+
+          try {
+            await plugin.run(m, extra);
+            if (!isPrems) m.limit = m.limit || plugin.limit || false;
+          } catch (e) {
+            console.error(e);
+            m.reply(func.format(e));
+          } finally {
+            // Execute 'after' function of the plugin if defined
+            if (typeof plugin.after === "function") {
+              try {
+                await plugin.after.call(conn, m, extra);
+              } catch (e) {
+                console.error(e);
+              }
             }
           }
         }
+      } catch (e) {
+        console.error(e);
       }
     }
   } catch (e) {
     console.error(e);
   } finally {
-    if (db.data.settings.queque && m.body) {
-      let quequeIndex = conn.msgqueque.indexOf(m.id || m.key.id);
-      if (quequeIndex !== -1) conn.msgqueque.splice(quequeIndex, 1);
+    if (m.isGroup) {
+      //auto typing / record
+      if (db.data.chats[m.chat].presence)
+        await this.sendPresenceUpdate(
+          ["composing", "recording"].getRandom(),
+          m.chat,
+        );
     }
-
+    if (db.data.settings.queue && m.body) {
+      const id = m.id;
+      this.msgqueque.unqueue(id);
+    }
+    console.log(db.data.users[m.sender]);
+    let user,
+      stats = db.data.stats;
     if (m) {
-      let user,
-        stats = db.data.stats,
-        stat;
       if (m.sender && (user = db.data.users[m.sender])) {
         user.exp += m.exp;
         user.limit -= m.limit * 1;
+        console.log(m.limit * 1);
       }
 
+      let stat;
       if (m.plugin) {
+        let now = +new Date();
         if (m.plugin in stats) {
           stat = stats[m.plugin];
           if (!isNumber(stat.total)) stat.total = 1;
           if (!isNumber(stat.success)) stat.success = m.error != null ? 0 : 1;
-          if (!isNumber(stat.last)) stat.last = +new Date();
+          if (!isNumber(stat.last)) stat.last = now;
           if (!isNumber(stat.lastSuccess))
-            stat.lastSuccess = m.error != null ? 0 : +new Date();
-        } else {
+            stat.lastSuccess = m.error != null ? 0 : now;
+        } else
           stat = stats[m.plugin] = {
             total: 1,
             success: m.error != null ? 0 : 1,
-            last: +new Date(),
-            lastSuccess: m.error != null ? 0 : +new Date(),
+            last: now,
+            lastSuccess: m.error != null ? 0 : now,
           };
-        }
         stat.total += 1;
-        stat.last = +new Date();
+        stat.last = now;
         if (m.error == null) {
           stat.success += 1;
-          stat.lastSuccess = +new Date();
+          stat.lastSuccess = now;
         }
       }
     }
 
-    if (!m.isBaileys && !m.fromMe)
+    // Log the command execution
+    if (!m.isBaileys && !m.fromMe) {
       console.log(
         "~> [\x1b[1;32m CMD \x1b[1;37m]",
         chalk.yellow(m.type),
@@ -227,6 +249,7 @@ export async function handler(conn, m, chatUpdate) {
         "args :",
         chalk.green(m.body?.length || 0),
       );
+    }
   }
 }
 

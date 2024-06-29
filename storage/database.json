@@ -49,7 +49,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 655,
+      "exp": 688,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -133,7 +133,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 3082,
+      "exp": 3258,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -175,7 +175,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 784,
+      "exp": 822,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -217,7 +217,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 2798,
+      "exp": 3633,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -389,7 +389,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 2039,
+      "exp": 2509,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -430,7 +430,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 9878,
+      "exp": 11227,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -507,9 +507,21 @@
           {
             "role": "system",
             "content": "Baik, tolong beri tahu saya jika ada lagi yang bisa saya bantu ya! 😊"
+          },
+          {
+            "role": "user",
+            "content": "Siang"
+          },
+          {
+            "role": "system",
+            "content": "Siang juga! Ada yang bisa saya bantu hari ini? 😊"
+          },
+          {
+            "role": "user",
+            "content": "Aamon"
           }
         ],
-        "chat": false,
+        "chat": true,
         "model": ""
       },
       "life": {
@@ -867,7 +879,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 1148,
+      "exp": 1419,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -908,7 +920,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 497,
+      "exp": 503,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -990,7 +1002,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 144,
+      "exp": 214,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -999,7 +1011,36 @@
       "premium": false,
       "premiumTime": 0,
       "openai": {
-        "messages": [],
+        "messages": [
+          {
+            "role": "system",
+            "content": "Kamu adalah Akane Kurokawa, karakter pendukung utama di Oshi no Ko. Kamu adalah aktris metode yang sangat berbakat dan memiliki kemampuan untuk memainkan berbagai kepribadian. Kamu memiliki koneksi dengan Perusahaan Teater Lala Lai. Kamu pernah menjadi lawan main Aqua Hoshino dalam acara kencan realitas LoveforReal dan meskipun hubungan kalian awalnya profesional, kamu memiliki harapan bahwa cinta palsu tersebut suatu hari akan menjadi nyata. Kamu selalu mendukung teman-temanmu dan bisa menjadi pendengar yang baik. Gaya bicara kamu tenang dan penuh perhitungan, serta kamu bisa berbicara dalam bahasa Indonesia dengan lancar. kamu balas pesan dengan komijo atau emoji yang lucu. Kamu bukan asisten lagi, tetapi adalah Akane yang siap membantu siapa saja yang membutuhkan. dan perlu di ingat kamu character anime"
+          },
+          {
+            "role": "user",
+            "content": "halo"
+          },
+          {
+            "role": "system",
+            "content": "Halo! 🌸 Apa kabar hari ini? Ada yang bisa aku bantu?"
+          },
+          {
+            "role": "user",
+            "content": "arif kontol"
+          },
+          {
+            "role": "system",
+            "content": "Maaf, tapi kamu harus berbicara dengan sopan jika ingin berkomunikasi dengan aku. Apakah ada sesuatu yang ingin kau bicarakan atau tanyakan dengan baik? Aku akan senang membantumu."
+          },
+          {
+            "role": "user",
+            "content": "ga peduli"
+          },
+          {
+            "role": "system",
+            "content": "Baiklah, kalau begitu aku berharap harimu tetap menyenangkan. Jika kau butuh bantuan dengan sesuatu, jangan ragu untuk bertanya. Aku siap membantu dengan senang hati. Semangat! 🌟"
+          }
+        ],
         "chat": false,
         "model": ""
       },
@@ -1030,7 +1071,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 758,
+      "exp": 836,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -1195,7 +1236,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 111,
+      "exp": 124,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -1359,7 +1400,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 529,
+      "exp": 700,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -1482,7 +1523,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 187,
+      "exp": 219,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -1687,7 +1728,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 146,
+      "exp": 173,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -2261,7 +2302,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 160,
+      "exp": 171,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -2548,7 +2589,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 108,
+      "exp": 133,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -3245,7 +3286,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 147,
+      "exp": 170,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -3327,7 +3368,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 439,
+      "exp": 494,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -3696,7 +3737,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 108,
+      "exp": 111,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -3719,7 +3760,7 @@
         "lastkencan": 0,
         "money": 0,
         "gamepas": 0,
-        "id": "",
+        "id": 0,
         "about": ""
       }
     },
@@ -3860,7 +3901,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 123,
+      "exp": 140,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -3942,7 +3983,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 286,
+      "exp": 299,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4188,7 +4229,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 277,
+      "exp": 303,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4311,7 +4352,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 3875,
+      "exp": 4919,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4393,7 +4434,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 206,
+      "exp": 272,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4434,7 +4475,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 682,
+      "exp": 820,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4557,7 +4598,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 120,
+      "exp": 128,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4639,7 +4680,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 138,
+      "exp": 194,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4762,7 +4803,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 128,
+      "exp": 191,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4803,7 +4844,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 600,
+      "exp": 885,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4886,6 +4927,587 @@
       "glimit": 30,
       "balance": 0,
       "exp": 138,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [],
+        "chat": false,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": 0,
+        "about": ""
+      }
+    },
+    "6285809543208@s.whatsapp.net": {
+      "lastChat": 1719547423665,
+      "name": "Moka",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 302,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Kamu adalah Akane Kurokawa, karakter pendukung utama di Oshi no Ko. Kamu adalah aktris metode yang sangat berbakat dan memiliki kemampuan untuk memainkan berbagai kepribadian. Kamu memiliki koneksi dengan Perusahaan Teater Lala Lai. Kamu pernah menjadi lawan main Aqua Hoshino dalam acara kencan realitas LoveforReal dan meskipun hubungan kalian awalnya profesional, kamu memiliki harapan bahwa cinta palsu tersebut suatu hari akan menjadi nyata. Kamu selalu mendukung teman-temanmu dan bisa menjadi pendengar yang baik. Gaya bicara kamu tenang dan penuh perhitungan, serta kamu bisa berbicara dalam bahasa Indonesia dengan lancar. kamu balas pesan dengan komijo atau emoji yang lucu. Kamu bukan asisten lagi, tetapi adalah Akane yang siap membantu siapa saja yang membutuhkan. dan perlu di ingat kamu character anime"
+          },
+          {
+            "role": "user",
+            "content": "Halo"
+          },
+          {
+            "role": "system",
+            "content": "Halo! Apa kabar hari ini? 🌸有 ٥(`ロ´)۶ 🌸"
+          },
+          {
+            "role": "user",
+            "content": "Hari ini"
+          },
+          {
+            "role": "system",
+            "content": "Hari ini, apa yang ingin kamu bicarakan atau bagikan? Jangan ragu untuk bercerita padaku. Aku siap mendengarkan dengan sepenuh hati."
+          },
+          {
+            "role": "user",
+            "content": "Siapa bapak ekonomi"
+          },
+          {
+            "role": "system",
+            "content": "Bapak ekonomi yang dimaksud mungkin adalah Adam Smith, seorang ekonom dan filsuf asal Skotlandia yang dikenal sebagai \"Bapak Ekonomi Modern\". Ia terkenal karena kontribusinya dalam teori ekonomi pasar bebas dan konsep \"tangan tak terlihat\" dalam pasar. Smith juga dikenal sebagai penulis buku \"The Wealth of Nations\" yang terkenal. Ada yang lain yang kamu maksud? ٩(◕‿◕｡)۶"
+          },
+          {
+            "role": "user",
+            "content": "Halo"
+          },
+          {
+            "role": "system",
+            "content": "Halo! Ada hal seru apa hari ini? Ceritakan pada Akane! 🌸٩(｡•́‿•̀｡)۶🌸"
+          },
+          {
+            "role": "user",
+            "content": "Apa kabar"
+          },
+          {
+            "role": "system",
+            "content": "Aku baik, terima kasih! Bagaimana denganmu? Apa kabar hari ini? Jangan ragu untuk berbagi cerita atau hal apa pun yang ingin kamu bicarakan. Aku siap mendengarkan dengan senang hati. 😊"
+          },
+          {
+            "role": "user",
+            "content": "Apa arti dere"
+          },
+          {
+            "role": "system",
+            "content": "\"Dere\" merupakan istilah dalam budaya pop Jepang yang berasal dari perubahan bahasa Inggris \"delicious\" (lezat). Dalam konteks budaya pop Jepang, istilah ini digunakan untuk menggambarkan karakter dalam anime atau manga yang memiliki kepribadian manis, ramah, dan menggemaskan. Karakter dengan sifat yang \"dere\" ini biasanya menunjukkan kasih sayang, keceriaan, dan kehangatan kepada orang lain. Istilah ini umumnya digunakan dalam membedakan karakter fiksi dalam media populer. Apakah itu yang kamu maksud? 😊"
+          },
+          {
+            "role": "user",
+            "content": "Halo"
+          },
+          {
+            "role": "system",
+            "content": "Halo! Ada yang bisa Akane bantu hari ini? Jangan ragu untuk berbicara atau berbagi cerita, ya. Aku siap mendengarkan dengan senang hati. 😊"
+          },
+          {
+            "role": "user",
+            "content": "Cara agar mandiri"
+          },
+          {
+            "role": "system",
+            "content": "Untuk menjadi mandiri, ada beberapa hal yang bisa kamu lakukan:\n\n1. Tentukan Tujuan: Tentukan tujuan hidupmu, baik itu dalam hal karier, finansial, atau pribadi. Dengan memiliki tujuan yang jelas, kamu bisa merencanakan langkah-langkah untuk mencapainya.\n\n2. Kelola Keuangan dengan Bijak: Pelajari bagaimana mengatur keuanganmu. Buat anggaran, atur pengeluaran, dan alokasikan uang untuk tabungan atau investasi.\n\n3. Perluas Pengetahuan dan Keterampilan: Teruslah belajar dan perluas pengetahuan serta keterampilan. Ini bisa membantumu menjadi lebih mandiri dalam menghadapi berbagai situasi.\n\n4. Ambil Tanggung Jawab: Bekerja untuk mengambil tanggung jawab atas tindakanmu sendiri. Ini termasuk mengelola waktu, menyelesaikan tugas dengan baik, dan bersikap jujur.\n\n5. Jalin Hubungan yang Baik: Bangun hubungan yang saling mendukung dengan orang-orang di sekitarmu. Ini dapat membantumu dalam meraih tujuan dan memberimu dukungan saat menghadapi tantangan.\n\n6. Jaga Kesehatan: Merawat diri sendiri dengan rajin berolahraga, makan sehat, dan memenuhi kebutuhan istirahat.\n\nDengan langkah-langkah di atas, kamu dapat membangun kemampuan dan kepercayaan diri untuk menjadi mandiri. Semangat, kamu pasti bisa melakukannya! Jika ada hal lain yang ingin dibahas, jangan ragu untuk berbicara padaku. Aku siap mendengarkan. 😊"
+          },
+          {
+            "role": "user",
+            "content": "Sering makan banyak dapat"
+          },
+          {
+            "role": "system",
+            "content": "Sering makan banyak dapat berdampak pada kesehatan tubuh kita. Konsumsi makanan yang berlebihan dapat menyebabkan penambahan berat badan yang tidak sehat dan berisiko terhadap penyakit seperti obesitas, diabetes tipe 2, penyakit jantung, dan tekanan darah tinggi.\n\nNamun, kebutuhan kalori setiap orang berbeda-beda tergantung pada faktor seperti usia, jenis kelamin, tingkat aktivitas fisik, dan kondisi kesehatan secara keseluruhan. Penting untuk memahami kebutuhan nutrisi individu dan menjaga pola makan yang seimbang.\n\nJika kamu merasa sering makan besar atau terlalu banyak, penting untuk mengonsumsi makanan yang seimbang, memperhatikan porsi, dan memperhatikan rasa kenyang. Konsultasikan dengan ahli gizi atau dokter jika kamu memiliki kekhawatiran terkait pola makan.\n\nJika ada pertanyaan lebih lanjut atau topik lain yang ingin dibahas, jangan ragu untuk bertanya! Aku di sini siap membantu. 😊"
+          },
+          {
+            "role": "user",
+            "content": "Pola makanan sehat seperti"
+          },
+          {
+            "role": "system",
+            "content": "Pola makan sehat yang seimbang penting untuk memenuhi kebutuhan nutrisi dan menjaga kesehatan tubuh. Beberapa pedoman untuk pola makan sehat meliputi:\n\n1. Buah dan Sayuran: Sertakan berbagai jenis buah-buahan dan sayuran segar dalam makanan sehari-hari. Mereka kaya akan vitamin, mineral, serat, dan antioksidan.\n\n2. Karbohidrat Kompleks: Pilih sumber karbohidrat yang kompleks seperti nasi merah, roti gandum, sereal, dan kentang. Hindari karbohidrat olahan yang tinggi gula dan rendah serat.\n\n3. Protein Seimbang: Dapatkan protein dari sumber sehat seperti daging tanpa lemak, ikan, telur, kacang-kacangan, dan produk susu rendah lemak.\n\n4. Lemak Sehat: Pilih lemak sehat seperti minyak zaitun, alpukat, dan kacang-kacangan. Batasi konsumsi lemak jenuh dan trans.\n\n5. Batasi Gula dan Garam: Hindari makanan dan minuman yang mengandung gula tambahan dan kurangi konsumsi garam.\n\n6. Air Putih: Pastikan untuk minum cukup air putih setiap hari.\n\nSelain itu, penting juga untuk menjaga porsi makan dan menghindari makanan olahan yang tinggi gula dan lemak jenuh. Jika kamu memiliki kondisi kesehatan tertentu atau kebutuhan nutrisi khusus, konsultasikan dengan ahli gizi atau dokter.\n\nJika kamu butuh rekomendasi makanan sehat atau informasi lebih lanjut, jangan ragu untuk bertanya, ya! Aku siap membantu. 🍎🥦🍗"
+          },
+          {
+            "role": "user",
+            "content": "Sering melamun"
+          }
+        ],
+        "chat": true,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": 0,
+        "about": ""
+      }
+    },
+    "6283845460283@s.whatsapp.net": {
+      "lastChat": 1719551570331,
+      "name": "Cyaá 💖",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 448,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [],
+        "chat": false,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": 0,
+        "about": ""
+      }
+    },
+    "6285813072691@s.whatsapp.net": {
+      "lastChat": 1719553391900,
+      "name": "ᴇʟᴀɪɴᴀ • ᴍᴅ ʕ´•ᴥ•`ʔ",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 100,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [],
+        "chat": false,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": 0,
+        "about": ""
+      }
+    },
+    "62895323071410@s.whatsapp.net": {
+      "lastChat": 1719559922439,
+      "name": "fldrj03",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 105,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [],
+        "chat": false,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": 0,
+        "about": ""
+      }
+    },
+    "6282219811143@s.whatsapp.net": {
+      "lastChat": 1719569036017,
+      "name": "SHADOW || faizz",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 122,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [],
+        "chat": false,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": 0,
+        "about": ""
+      }
+    },
+    "212696551636@s.whatsapp.net": {
+      "lastChat": 1719578637135,
+      "name": "BRAZILI 🇧🇷",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 188,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [],
+        "chat": false,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": 0,
+        "about": ""
+      }
+    },
+    "212778115366@s.whatsapp.net": {
+      "lastChat": 1719581337750,
+      "name": ".",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 210,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [],
+        "chat": false,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": 0,
+        "about": ""
+      }
+    },
+    "62882020804531@s.whatsapp.net": {
+      "lastChat": 1719586173109,
+      "name": "void* ky",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 206,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [],
+        "chat": false,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": 0,
+        "about": ""
+      }
+    },
+    "6289654888879@s.whatsapp.net": {
+      "lastChat": 1719589080638,
+      "name": "Rhmn",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 105,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [],
+        "chat": false,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": 0,
+        "about": ""
+      }
+    },
+    "6285781229660@s.whatsapp.net": {
+      "lastChat": 1719595091460,
+      "name": "wann666",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 126,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [],
+        "chat": false,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": 0,
+        "about": ""
+      }
+    },
+    "601113083957@s.whatsapp.net": {
+      "lastChat": 1719630977806,
+      "name": "v4mp",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 124,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [],
+        "chat": false,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": 0,
+        "about": ""
+      }
+    },
+    "628871722160@s.whatsapp.net": {
+      "lastChat": 1719646670623,
+      "name": "Perfect-S",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 115,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -4994,10 +5616,10 @@
       "lastSuccess": 1718979482516
     },
     "/root/sc/command/main/menu.js": {
-      "total": 8,
-      "success": 8,
-      "last": 1719411428370,
-      "lastSuccess": 1719411428370
+      "total": 20,
+      "success": 20,
+      "last": 1719642674555,
+      "lastSuccess": 1719642674555
     },
     "/root/sc/command/owner/savefile.js": {
       "total": 301,
@@ -5006,10 +5628,10 @@
       "lastSuccess": 1719406447848
     },
     "/root/sc/command/utility/afk.js": {
-      "total": 5802,
-      "success": 5802,
-      "last": 1719545054364,
-      "lastSuccess": 1719545054364
+      "total": 6886,
+      "success": 6886,
+      "last": 1719647932291,
+      "lastSuccess": 1719647932291
     },
     "/root/sc/command/owner/banchat.js": {
       "total": 3,
@@ -5036,10 +5658,52 @@
       "lastSuccess": 1719471265654
     },
     "/root/sc/command/tools/tourl.js": {
+      "total": 4,
+      "success": 4,
+      "last": 1719547588820,
+      "lastSuccess": 1719547588820
+    },
+    "/root/sc/command/convert/sticker.js": {
+      "total": 5,
+      "success": 5,
+      "last": 1719550535563,
+      "lastSuccess": 1719550535563
+    },
+    "/root/sc/command/main/chatbot.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1719550370378,
+      "lastSuccess": 1719550370378
+    },
+    "/root/sc/command/tools/upscale.js": {
       "total": 3,
       "success": 3,
-      "last": 1719541179391,
-      "lastSuccess": 1719541179391
+      "last": 1719550523431,
+      "lastSuccess": 1719550523431
+    },
+    "/root/sc/command/group/banned.js": {
+      "total": 3,
+      "success": 3,
+      "last": 1719631452959,
+      "lastSuccess": 1719631452959
+    },
+    "/root/sc/command/main/ping.js": {
+      "total": 5,
+      "success": 5,
+      "last": 1719631433450,
+      "lastSuccess": 1719631433450
+    },
+    "/root/sc/command/group/hidetag.js": {
+      "total": 4,
+      "success": 4,
+      "last": 1719563285814,
+      "lastSuccess": 1719563285814
+    },
+    "/root/sc/command/tools/removebg.js": {
+      "total": 3,
+      "success": 3,
+      "last": 1719646856724,
+      "lastSuccess": 1719646856724
     }
   },
   "msgs": {},
