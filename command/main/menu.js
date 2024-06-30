@@ -125,7 +125,7 @@ Pilih kategori di bawah untuk melihat perintah yang tersedia:`;
             showAdAttribution: true,
             title: "Akane-Bot",
             body: "Powered By Arifzyn.",
-            thumbnailUrl: "https://telegra.ph/file/a30e4e01ab197712ad3f4.jpg",
+            thumbnailUrl: "https://telegra.ph/file/fa1510a4a58687ef9a234.jpg",
             sourceUrl: global.API("akane"),
             mediaType: 1,
             renderLargerThumbnail: true,
