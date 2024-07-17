@@ -3,9 +3,18 @@ export default {
   description: "Show your waifu information",
   name: "waifume",
   tags: "waifu",
-  
+
   run: async (m, { conn, text, args, command }) => {
-    let who = m.mentions && m.mentions[0] ? m.mentions[0] : args[0] ? args.join("").replace(/[@ .+-]/g, "").replace(/^\+/, "").replace(/-/g, "") + "@s.whatsapp.net" : "";
+    let who =
+      m.mentions && m.mentions[0]
+        ? m.mentions[0]
+        : args[0]
+          ? args
+              .join("")
+              .replace(/[@ .+-]/g, "")
+              .replace(/^\+/, "")
+              .replace(/-/g, "") + "@s.whatsapp.net"
+          : "";
     if (!who) {
       who = m.sender;
     }
@@ -13,11 +22,15 @@ export default {
     const user = global.db.data.users[who].life;
 
     if (!user.name || !user.gender || !user.age) {
-      m.reply(`⚠️ Untuk menggunakan fitur ini, kamu harus teregistrasi terlebih dahulu dengan cara:\n\nKetik *${m.prefix}setlife* dan ikuti tutorialnya`);
+      m.reply(
+        `⚠️ Untuk menggunakan fitur ini, kamu harus teregistrasi terlebih dahulu dengan cara:\n\nKetik *${m.prefix}setlife* dan ikuti tutorialnya`,
+      );
       return;
     }
     if (!user.waifu) {
-      m.reply(`⚠️ Kamu belum punya waifu! Ketik *${m.prefix}waifu* dan cari waifumu.`);
+      m.reply(
+        `⚠️ Kamu belum punya waifu! Ketik *${m.prefix}waifu* dan cari waifumu.`,
+      );
       return;
     }
 

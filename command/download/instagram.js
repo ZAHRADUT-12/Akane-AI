@@ -6,19 +6,21 @@ export default {
   tags: "download",
 
   run: async (m, { conn }) => {
-    const url = m.text
+    const url = m.text;
 
     if (!func.isUrl(url))
       return m.reply(
         `Invalid URL\n\nContoh: ${m.prefix + m.command} https://www.instagram.com/reel/C65wgBxraJ5/`,
       );
-      
+
     await m.reply("wait");
-       
+
     let response;
-    
+
     try {
-      response = await func.fetchJson(`https://dikaardnt.com/api/download/instagram?url=${func.isUrl(url)[0]}`);
+      response = await func.fetchJson(
+        `https://dikaardnt.com/api/download/instagram?url=${func.isUrl(url)[0]}`,
+      );
     } catch (err) {
       conn.logger.error(`Error fetching Instagram reel:`, err);
       return m.reply("An error occurred while fetching the Instagram reel.");
@@ -30,7 +32,9 @@ export default {
 
     for (const mediaUrl of response) {
       try {
-        await m.reply(mediaUrl, { caption: `Here is your Instagram download.` });
+        await m.reply(mediaUrl, {
+          caption: `Here is your Instagram download.`,
+        });
       } catch (err) {
         conn.logger.error(`Error sending media:`, err);
         m.reply(`error`);

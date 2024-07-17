@@ -13,6 +13,8 @@ import syntaxerror from "syntax-error";
 import { Boom } from "@hapi/boom";
 import NodeCache from "node-cache";
 import baileys, { jidNormalizedUser } from "@whiskeysockets/baileys";
+import { useMongoAuthState } from "session"
+
 import {
   plugins,
   loadPluginFiles,
@@ -63,7 +65,10 @@ async function start() {
 
   const msgRetryCounterCache = new NodeCache();
   const { state, saveCreds } =
-    await baileys.useMultiFileAuthState("./system/session");
+    await useMongoAuthState(global.session, {
+    	tableName: "Akane",
+    	session: "AkaneBot-Auth"
+    });
   const conn = baileys.default({
     logger,
     printQRInTerminal: false,
@@ -262,7 +267,7 @@ async function start() {
 
     await (
       await import(`./handler.js?v=${Date.now()}`)
-    ).handler(conn, m, message);
+    ).handler(conn, m, message, store);
   });
 
   conn.ev.on("group-participants.update", async (message) => {

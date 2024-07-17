@@ -19,8 +19,9 @@ global.scraper = scraper
 
 import { translate } from "@vitalets/google-translate-api";
 
-export async function handler(conn, m, chatUpdate) {
+export async function handler(conn, m, chatUpdate, store) {
   conn.msgqueue = conn.msgqueue || [];
+  global.store = store
   if (!m || typeof m !== "object") return;
 
   try {
@@ -163,6 +164,7 @@ export async function handler(conn, m, chatUpdate) {
             command,
             text,
             chatUpdate,
+            store,
           };
 
           try {

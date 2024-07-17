@@ -1,4 +1,4 @@
-import GeminiAI from '../../storage/scraper/gemini.js';
+import GeminiAI from "../../storage/scraper/gemini.js";
 
 const gemini = new GeminiAI("AIzaSyDYEhk9stqfq1cvzdjBRiK1-Axxkb79y54");
 
@@ -6,14 +6,14 @@ export default {
   command: ["gemini", "gemini-ai"],
   description: "Chat AI with Gemini Google",
   name: "gemini",
-  tags: "tools", 
-  
-  example: "Contoh : %p%cmd Hai Gemini", 
+  tags: "tools",
+
+  example: "Contoh : %p%cmd Hai Gemini",
 
   run: async (m, { conn }) => {
     const prompt = m.text;
     const quoted = m.isQuoted ? m.quoted : m;
-    
+
     try {
       let response;
       if (quoted.mime && /image/i.test(quoted.mime)) {
@@ -27,7 +27,11 @@ export default {
       await m.reply(response);
     } catch (error) {
       console.error("Error running Gemini AI:", error);
-      await conn.sendMessage(m.chat, "There was an error processing your request.", { quoted: m });
+      await conn.sendMessage(
+        m.chat,
+        "There was an error processing your request.",
+        { quoted: m },
+      );
     }
-  }
-} 
+  },
+};

@@ -13,10 +13,12 @@ let handler = async (m, { args }) => {
   }
 
   // Panggil fungsi translate dengan teks dan bahasa tujuan
-  let res = await translate(text, { to: lang, autoCorrect: true }).catch((err) => {
-    console.error("Terjadi kesalahan dalam terjemahan:", err);
-    return null;
-  });
+  let res = await translate(text, { to: lang, autoCorrect: true }).catch(
+    (err) => {
+      console.error("Terjadi kesalahan dalam terjemahan:", err);
+      return null;
+    },
+  );
 
   // Pastikan respons berhasil dan memiliki hasil terjemahan
   if (!res || !res.text) {
@@ -31,10 +33,10 @@ let handler = async (m, { args }) => {
 };
 
 export default {
-  command: ['translate', 'tr'],
-  description: 'Menerjemahkan teks.',
-  name: 'translate',
-  tags: 'tools',
+  command: ["translate", "tr"],
+  description: "Menerjemahkan teks.",
+  name: "translate",
+  tags: "tools",
   limit: 1,
   run: handler,
 };

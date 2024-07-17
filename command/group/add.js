@@ -1,8 +1,12 @@
-import { getBinaryNodeChildren } from "@whiskeysockets/baileys";
+import {
+  getBinaryNodeChild,
+  getBinaryNodeChildren,
+  delay,
+} from "@whiskeysockets/baileys";
 
 export default {
   command: ["add", "+"],
-  description: "add user to group",
+  description: "Add user to group",
   name: "add",
   tags: "group",
 
@@ -10,40 +14,101 @@ export default {
   admin: true,
   botAdmin: true,
 
-  run: async (m, { conn }) => {
-    let users =
-      m.mentions.length !== 0
-        ? m.mentions.slice(0, 2)
-        : m.isQuoted
+  run: async (m, { conn, text }) => {
+    let who,
+      not = [],
+      users = [];
+
+    if (text.includes(",")) {
+      who = text
+        .split(",")
+        .map((v) => v.replace(/\D/g, "") + "@s.whatsapp.net");
+    } else {
+      who = text
+        ? [text.replace(/\D/g, "") + "@s.whatsapp.net"]
+        : m.quoted
           ? [m.quoted.sender]
-          : m.text
-              .split(",")
-              .map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net")
-              .slice(0, 2);
-    if (users.length == 0) return m.reply("Fuck You 🖕");
-    const res = await conn.groupParticipantsUpdate(m.chat, users, "add");
-    for (let i of res) {
-      if (i.status == 403) {
-        let node = getBinaryNodeChildren(i.content, "add_request");
-        await m.reply(`Can't add @${i.jid.split("@")[0]}, send invitation...`);
-        let url = await conn
-          .profilePictureUrl(m.chat, "image")
-          .catch(
-            (_) =>
-              "https://lh3.googleusercontent.com/proxy/esjjzRYoXlhgNYXqU8Gf_3lu6V-eONTnymkLzdwQ6F6z0MWAqIwIpqgq_lk4caRIZF_0Uqb5U8NWNrJcaeTuCjp7xZlpL48JDx-qzAXSTh00AVVqBoT7MJ0259pik9mnQ1LldFLfHZUGDGY=w1200-h630-p-k-no-nu",
+          : (m.mentions ?? []);
+    }
+
+    if (who.length == 0) return m.reply("Yang mau di add siapa? Jin ya?");
+    who = [
+      ...new Set(
+        who.map((v) => (v.startsWith("08") ? v.replace("08", "628") : v)),
+      ),
+    ];
+
+    for (let x of who) {
+      let test = await conn.onWhatsApp(x);
+      if (test.length > 0) users.push(test[0].jid);
+      else not.push(x.split("@")[0]);
+    }
+
+    if (users.length == 0)
+      return m.reply(`@${not.join(", @")} bukan pengguna WhatsApp`);
+    if (not.length > 0) m.reply(`@${not.join(", @")} bukan pengguna WhatsApp`);
+
+    let img = await conn
+      .profilePictureUrl(m.chat, "image")
+      .catch(
+        (_) =>
+          "https://raw.githubusercontent.com/clicknetcafe/Databasee/main/azamibot/media/avatar_contact.jpg",
+      );
+
+    for (let i of users) {
+      let res = await conn.groupParticipantsUpdate(m.chat, [i], "add");
+
+      for (let x of res) {
+        if (x.status == "403") {
+          let gc = await conn.getName(m.chat);
+          let node = getBinaryNodeChildren(x.content, "add_request");
+          await conn.reply(
+            m.chat,
+            `Couldn't add @${x.jid.split("@")[0]}, sending invitation...`,
+            m,
+            { mentions: [x.jid] },
           );
-        await conn.sendGroupV4Invite(
-          i.jid,
-          m.chat,
-          node[0]?.attrs?.code || node.attrs.code,
-          node[0]?.attrs?.expiration || node.attrs.expiration,
-          m.metadata.subject,
-          url,
-          "Invitation to join my WhatsApp Group",
-        );
-      } else if (i.status == 409)
-        return m.reply(`@${i.jid?.split("@")[0]} already in this group`);
-      else m.reply(func.format(i));
+          console.log(node);
+          await conn.sendGroupV4Invite(
+            x.jid,
+            m.chat,
+            node[0]?.attrs?.code || node.attrs.code,
+            node[0]?.attrs?.expiration || node.attrs.expiration,
+            gc,
+            img,
+            `Invitation to join ${gc} Group${wm ? `\n_*―* by ${wm}_` : ""}`,
+          );
+        } else if (x.status == "408") {
+          await conn.reply(
+            m.chat,
+            `You couldn't add @${x.jid.split("@")[0]} because they left the group recently. Try again later.`,
+            m,
+            { mentions: [x.jid] },
+          );
+        } else if (x.status == "409") {
+          await conn.reply(
+            m.chat,
+            `@${x.jid.split("@")[0]} already in this group.`,
+            m,
+            { mentions: [x.jid] },
+          );
+        } else {
+          if (x.status == "200") console.log(x);
+          else m.reply(JSON.stringify(x, null, 2));
+        }
+      }
+
+      await delay(ranNumb(2000, 5500));
     }
   },
 };
+
+function ranNumb(min, max = null) {
+  if (max !== null) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  } else {
+    return Math.floor(Math.random() * min) + 1;
+  }
+}

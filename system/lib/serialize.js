@@ -120,50 +120,34 @@ export function Client({ conn, store }) {
     },
 
     getName: {
-      value(jid) {
-        let id = conn.decodeJid(jid),
-          v;
+  value(jid) {
+    let id = conn.decodeJid(jid), v;
 
-        if (id?.endsWith("@g.us")) {
-          return new Promise(async (resolve) => {
-            v =
-              conn.contacts[id] ||
-              conn.messages["status@broadcast"]?.array?.find(
-                (a) => a?.key?.participant === id,
-              );
-            if (!(v.name || v.subject)) v = conn.groupMetadata[id] || {};
-            resolve(
-              v?.name ||
-                v?.subject ||
-                v?.pushName ||
-                parsePhoneNumber("+" + id.replace("@g.us", "")).format(
-                  "INTERNATIONAL",
-                ),
-            );
-          });
-        } else {
-          v =
-            id === "0@s.whatsapp.net"
-              ? {
-                  id,
-                  name: "WhatsApp",
-                }
-              : id === conn.decodeJid(conn?.user?.id)
-                ? conn.user
-                : conn.contacts[id] || {};
-        }
+    if (id?.endsWith("@g.us")) {
+      return new Promise(async (resolve) => {
+        v = await store.fetchGroupMetadata(jid, conn) || {}
+					resolve(v.name || v.subject || id.replace("@g.us", ""))
+      });
+    } else {
+      v = id === "0@s.whatsapp.net"
+        ? { id, name: "WhatsApp" }
+        : id === conn.decodeJid(conn?.user?.id)
+          ? conn.user
+          : conn.contacts?.[id] || {};
+    }
 
-        return (
-          v?.name ||
-          v?.subject ||
-          v?.pushName ||
-          v?.verifiedName ||
-          parsePhoneNumber("+" + id.replace("@s.whatsapp.net", "")).format(
-            "INTERNATIONAL",
-          )
-        );
-      },
-    },
+    return (
+      v?.name ||
+      v?.subject ||
+      v?.pushName ||
+      v?.notify ||
+      v?.verifiedName ||
+      parsePhoneNumber("+" + id.replace("@s.whatsapp.net", "")).format(
+        "INTERNATIONAL",
+      )
+    );
+  },
+},
 
     sendContact: {
       async value(jid, number, quoted, options = {}) {

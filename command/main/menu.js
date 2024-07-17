@@ -23,16 +23,22 @@ Pilih kategori di bawah untuk melihat perintah yang tersedia:`;
 
       for (const [filePath, command] of Object.entries(global.plugins)) {
         const cmd = command.default || command;
-        if (!cmd || !cmd.command || !Array.isArray(cmd.command) || !cmd.command[0]) continue;
-        
+        if (
+          !cmd ||
+          !cmd.command ||
+          !Array.isArray(cmd.command) ||
+          !cmd.command[0]
+        )
+          continue;
+
         const category = cmd.tags || "General";
-        categories.add(category); 
+        categories.add(category);
       }
 
       const sections = [
         {
           title: "Categories",
-          rows: Array.from(categories).map(category => ({
+          rows: Array.from(categories).map((category) => ({
             title: category,
             id: `${m.prefix + m.command} ${category}`,
             description: `View commands in the ${category} category`,
@@ -45,26 +51,40 @@ Pilih kategori di bawah untuk melihat perintah yang tersedia:`;
               title: "All Features",
               id: `${m.prefix + m.command} all`,
               description: "Menampilkan semua fitur category ( List Menu )",
-            }
-          ]
-        }
+            },
+          ],
+        },
       ];
 
-      return conn.sendListM(m.chat, body, wm, "https://telegra.ph/file/efba59850e2085da6cede.jpg", sections, m, {
-        contextInfo: {
-          mentionedJid: [m.sender],
-        }   
-      });
+      return conn.sendListM(
+        m.chat,
+        body,
+        wm,
+        "https://telegra.ph/file/efba59850e2085da6cede.jpg",
+        sections,
+        m,
+        {
+          contextInfo: {
+            mentionedJid: [m.sender],
+          },
+        },
+      );
     } else {
       let body = `Hai, @${m.sender.split("@")[0]} Berikut adalah daftar menu ${selectedCategory === "all" ? "semua kategori" : selectedCategory}\n`;
 
       if (selectedCategory.toLowerCase() === "all") {
         // Mengelompokkan perintah berdasarkan kategori
         const commandsByCategory = {};
- 
+
         for (const [filePath, command] of Object.entries(global.plugins)) {
           const cmd = command.default || command;
-          if (!cmd || !cmd.command || !Array.isArray(cmd.command) || !cmd.command[0]) continue;
+          if (
+            !cmd ||
+            !cmd.command ||
+            !Array.isArray(cmd.command) ||
+            !cmd.command[0]
+          )
+            continue;
 
           const category = cmd.tags || "General";
           if (!commandsByCategory[category]) {
@@ -78,7 +98,7 @@ Pilih kategori di bawah untuk melihat perintah yang tersedia:`;
           body += `\n*${func.toUpper(category)} Feature*\n`;
           commandsByCategory[category].forEach((cmd, index) => {
             const names = Array.isArray(cmd.name) ? cmd.name : [cmd.name];
-            names.forEach(name => {
+            names.forEach((name) => {
               body += `${index + 1}. ${m.prefix + name}: ${cmd.description || "No description"}\n`;
             });
           });
@@ -89,7 +109,13 @@ Pilih kategori di bawah untuk melihat perintah yang tersedia:`;
 
         for (const [filePath, command] of Object.entries(global.plugins)) {
           const cmd = command.default || command;
-          if (!cmd || !cmd.command || !Array.isArray(cmd.command) || !cmd.command[0]) continue;
+          if (
+            !cmd ||
+            !cmd.command ||
+            !Array.isArray(cmd.command) ||
+            !cmd.command[0]
+          )
+            continue;
 
           const category = cmd.tags || "General";
           if (category.toLowerCase() === selectedCategory.toLowerCase()) {
@@ -97,16 +123,20 @@ Pilih kategori di bawah untuk melihat perintah yang tersedia:`;
           }
         }
 
-        body += `\n*${func.toUpper(selectedCategory)} Feature*\n` 
-        commandsInCategory.filter(cmd => {
-          const names = cmd.name;
-          return Array.isArray(names) ? names.length > 0 : names !== undefined && names !== null && names !== '';
-        }).forEach((cmd, index) => {
-          const names = Array.isArray(cmd.name) ? cmd.name : [cmd.name];
-          names.forEach(name => {
-            body += `${index + 1}. #${name}: ${cmd.description || "No description"}\n`;
+        body += `\n*${func.toUpper(selectedCategory)} Feature*\n`;
+        commandsInCategory
+          .filter((cmd) => {
+            const names = cmd.name;
+            return Array.isArray(names)
+              ? names.length > 0
+              : names !== undefined && names !== null && names !== "";
+          })
+          .forEach((cmd, index) => {
+            const names = Array.isArray(cmd.name) ? cmd.name : [cmd.name];
+            names.forEach((name) => {
+              body += `${index + 1}. #${name}: ${cmd.description || "No description"}\n`;
+            });
           });
-        });
 
         if (commandsInCategory.length === 0) {
           body += `\nNo commands found in the ${selectedCategory} category.`;
@@ -134,7 +164,7 @@ Pilih kategori di bawah untuk melihat perintah yang tersedia:`;
             newsletterJid: "120363189539738060@newsletter",
             newsletterName: "Arifzyn Information",
           },
-        }
+        },
       });
     }
   },

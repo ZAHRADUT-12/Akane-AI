@@ -1,10 +1,10 @@
-import axios from 'axios';
-import FormData from 'form-data';
+import axios from "axios";
+import FormData from "form-data";
 
 const apikey = [
-  't4DJWibUPdxTbCiZs6wXUTMB',
-  'Divb33Vh3YANNFJMPkv4QJs3',
-  '61N7EMLJURGuTdYpavHwkWTC'
+  "t4DJWibUPdxTbCiZs6wXUTMB",
+  "Divb33Vh3YANNFJMPkv4QJs3",
+  "61N7EMLJURGuTdYpavHwkWTC",
 ];
 
 const getRandomApiKey = () => {
@@ -18,7 +18,7 @@ const handler = async (m, { conn }) => {
 
   if (!/image/.test(q.mime)) {
     return m.reply(
-      "Usage:\nBalas pesan bertipe Foto / Gambar dengan caption ↓\n!removebg"
+      "Usage:\nBalas pesan bertipe Foto / Gambar dengan caption ↓\n!removebg",
     );
   }
 
@@ -27,31 +27,30 @@ const handler = async (m, { conn }) => {
 
   try {
     const formData = new FormData();
-    formData.append('size', 'auto');
-    formData.append('image_file', media, Date.now() + '.jpg'); // Assuming the file name is 'image.jpg'
+    formData.append("size", "auto");
+    formData.append("image_file", media, Date.now() + ".jpg"); // Assuming the file name is 'image.jpg'
 
     const response = await axios({
-      method: 'post',
-      url: 'https://api.remove.bg/v1.0/removebg',
+      method: "post",
+      url: "https://api.remove.bg/v1.0/removebg",
       data: formData,
-      responseType: 'arraybuffer',
+      responseType: "arraybuffer",
       headers: {
         ...formData.getHeaders(),
-        'X-Api-Key': getRandomApiKey()
+        "X-Api-Key": getRandomApiKey(),
       },
-      encoding: null
+      encoding: null,
     });
 
     if (response.status !== 200) {
-      console.error('Error:', response.status, response.statusText);
+      console.error("Error:", response.status, response.statusText);
       return m.reply("Failed to remove background. Please try again later.");
     }
 
-    const image = Buffer.from(response.data, 'binary');
-    await m.reply(image)
-
+    const image = Buffer.from(response.data, "binary");
+    await m.reply(image);
   } catch (error) {
-    console.error('Request failed:', error);
+    console.error("Request failed:", error);
     await m.reply("Failed to remove background. Please try again later.");
   }
 };
@@ -61,6 +60,6 @@ export default {
   description: "Remove background from an image",
   name: "removebg",
   tags: "tools",
-  limit: 1, 
+  limit: 1,
   run: handler,
 };

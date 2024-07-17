@@ -91,7 +91,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 184,
+      "exp": 192,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -430,7 +430,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 13828,
+      "exp": 14326,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -535,6 +535,14 @@
           {
             "role": "system",
             "content": "Tidak masalah, sama-sama! Jika kamu membutuhkan bantuan apa pun di masa depan, jangan ragu untuk menghubungi saya. Semoga harimu menyenangkan! 😊🌟"
+          },
+          {
+            "role": "user",
+            "content": "Lah 🗿"
+          },
+          {
+            "role": "system",
+            "content": "Sepertinya ada yang membuat kamu sedikit bingung, hehe. Jika ada yang perlu kamu sampaikan atau jika kamu butuh bantuan, jangan ragu untuk memberitahu saya. Saya selalu siap membantu dengan senang hati! ✨"
           }
         ],
         "chat": true,
@@ -1018,7 +1026,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 312,
+      "exp": 390,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -1087,7 +1095,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 2946,
+      "exp": 3271,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -5728,7 +5736,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 152,
+      "exp": 197,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -5810,7 +5818,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 164,
+      "exp": 234,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -6261,7 +6269,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 216,
+      "exp": 249,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -6861,6 +6869,47 @@
         "id": 0,
         "about": ""
       }
+    },
+    "62895347198105@s.whatsapp.net": {
+      "lastChat": 1721212990046,
+      "name": "Arifzyn",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 116,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [],
+        "chat": false,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": 0,
+        "about": ""
+      }
     }
   },
   "chats": {
@@ -7090,6 +7139,12 @@
       "success": 173,
       "last": 1721207984602,
       "lastSuccess": 1721207984602
+    },
+    "/root/bot/command/utility/waifu.js": {
+      "total": 193,
+      "success": 193,
+      "last": 1721216564295,
+      "lastSuccess": 1721216564295
     }
   },
   "msgs": {},
