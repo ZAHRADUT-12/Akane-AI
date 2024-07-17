@@ -600,6 +600,175 @@ export function Client({ conn, store }) {
       enumerable: true,
       writable: true,
     },
+    
+    reply: {
+      /**
+       * Reply to a message
+       * @param {String} jid
+       * @param {String|Buffer} text
+       * @param {import('@whiskeyclientets/baileys').proto.WebMessageInfo} quoted
+       * @param {Object} options
+       */
+      value(jid, text = "", quoted, options = {}) {
+        return Buffer.isBuffer(text)
+          ? conn.sendFile(jid, text, "file", "", quoted, false, options)
+          : conn.sendMessage(
+              jid,
+              { ...options, text },
+              { quoted, ...options },
+            );
+      },
+      writable: true,
+    },
+    
+    msToDate: {
+      value(ms) {
+        let days = Math.floor(ms / (24 * 60 * 60 * 1000));
+        let daysms = ms % (24 * 60 * 60 * 1000);
+        let hours = Math.floor(daysms / (60 * 60 * 1000));
+        let hoursms = ms % (60 * 60 * 1000);
+        let minutes = Math.floor(hoursms / (60 * 1000));
+        let minutesms = ms % (60 * 1000);
+        let sec = Math.floor(minutesms / 1000);
+        return days + " Days " + hours + " Hours " + minutes + " Minutes";
+      },
+      enumerable: true,
+    },
+
+    msToTime: {
+      value(ms) {
+        let h = isNaN(ms) ? "--" : Math.floor(ms / 3600000);
+        let m = isNaN(ms) ? "--" : Math.floor(ms / 60000) % 60;
+        let s = isNaN(ms) ? "--" : Math.floor(ms / 1000) % 60;
+        return [h + " Hours ", m + " Minutes ", s + " Second"]
+          .map((v) => v.toString().padStart(2, 0))
+          .join(" ");
+      },
+      enumerable: true,
+    },
+
+    msToHour: {
+      value(ms) {
+        let h = isNaN(ms) ? "--" : Math.floor(ms / 3600000);
+        return [h + " Jam "].map((v) => v.toString().padStart(2, 0)).join(" ");
+      },
+      enumerable: true,
+    },
+
+    msToMinute: {
+      value(ms) {
+        let m = isNaN(ms) ? "--" : Math.floor(ms / 60000) % 60;
+        return [m + " Menit "]
+          .map((v) => v.toString().padStart(2, 0))
+          .join(" ");
+      },
+      enumerable: true,
+    },
+
+    msToSecond: {
+      value(ms) {
+        let s = isNaN(ms) ? "--" : Math.floor(ms / 1000) % 60;
+        return [s + " Detik"].map((v) => v.toString().padStart(2, 0)).join(" ");
+      },
+      enumerable: true,
+    },
+
+    clockString: {
+      value(ms) {
+        let h = isNaN(ms) ? "--" : Math.floor(ms / 3600000);
+        let m = isNaN(ms) ? "--" : Math.floor(ms / 60000) % 60;
+        let s = isNaN(ms) ? "--" : Math.floor(ms / 1000) % 60;
+        return [h + " Jam ", m + " Menit ", s + " Detik"]
+          .map((v) => v.toString().padStart(2, 0))
+          .join(" ");
+      },
+      enumerable: true,
+    },
+    
+    sendMsg: {
+      async value(jid, message = {}, options = {}) {
+        return await conn.sendMessage(jid, message, {
+          ...options,
+          backgroundColor: "",
+          ephemeralExpiration: 86400,
+        });
+      },
+      enumerable: false,
+      writable: true,
+    },
+
+    sendFThumb: {
+      async value(
+        jid,
+        title,
+        text = "",
+        thumbnailUrl,
+        sourceUrl,
+        quoted,
+        LargerThumbnail = true,
+        AdAttribution = true,
+      ) {
+        return conn.sendMsg(
+          jid,
+          {
+            ...{
+              contextInfo: {
+                mentionedJid: await conn.parseMention(text),
+                externalAdReply: {
+                  title: title,
+                  body: null,
+                  mediaType: 1,
+                  previewType: 0,
+                  showAdAttribution: AdAttribution,
+                  renderLargerThumbnail: LargerThumbnail,
+                  thumbnailUrl: thumbnailUrl,
+                  sourceUrl: sourceUrl,
+                },
+              },
+            },
+            text,
+          },
+          { quoted },
+        );
+      },
+      enumerable: false,
+      writable: true,
+    },
+    sendFAudio: {
+      async value(
+        jid,
+        audioinfo = {},
+        m,
+        title,
+        thumbnailUrl,
+        sourceUrl,
+        body = "",
+        LargerThumbnail = true,
+        AdAttribution = true,
+      ) {
+        return await conn.sendMsg(
+          jid,
+          {
+            ...audioinfo,
+            contextInfo: {
+              externalAdReply: {
+                title: title,
+                body: body,
+                thumbnailUrl: thumbnailUrl,
+                sourceUrl: sourceUrl,
+                mediaType: 1,
+                showAdAttribution: AdAttribution,
+                renderLargerThumbnail: LargerThumbnail,
+              },
+            },
+          },
+          { quoted: m },
+        );
+      },
+      enumerable: false,
+      writable: true,
+    },
+    
   });
 
   if (conn.user?.id) conn.user.jid = conn.decodeJid(conn.user?.id);

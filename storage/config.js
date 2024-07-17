@@ -9,7 +9,7 @@ global.wm = "Made from love";
 
 global.author = "Arifzyn";
 global.packname = "Created Sticker By";
-global.link = "https://github.com/Arifzyn19";
+global.link = "https://akanebot.xyz";
 
 global.owner = ["6288213503541", "6285691464024"];
 global.pairingNumber = "62856914640248";

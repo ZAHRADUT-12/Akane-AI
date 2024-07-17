@@ -303,6 +303,10 @@ export default new (class Function {
 
     return `${result}${ext ? `.${ext}` : ""}`;
   }
+  
+  pickRandom (list) {
+    return list[Math.floor(Math.random() * list.length)];
+  }
 
   formatSize(bytes, si = true, dp = 2) {
     const thresh = si ? 1000 : 1024;
