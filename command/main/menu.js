@@ -8,67 +8,27 @@ export default {
     const selectedCategory = args[0];
 
     if (!selectedCategory) {
-      let body = `🤖 Hai @${m.sender.split("@")[0]}, selamat datang di Akane-Bot, asisten pribadi Anda di WhatsApp! Temukan berbagai fitur yang disesuaikan dengan kebutuhan Anda:
-
-📱 Unduh video, musik, dan buat stiker dengan mudah.
-🎨 Edit foto Anda dengan berbagai tools kreatif.
-🔍 Dapatkan informasi, mainkan game, dan masih banyak lagi!
-
-👨‍💻 *Pencipta*: Arifzyn
-📷 *Instagram*: arifzxa19
-
-Pilih kategori di bawah untuk melihat perintah yang tersedia:`;
-
+      let body = `🤖 Hai @${m.sender.split("@")[0]}, selamat datang di Akane-Bot, asisten pribadi Anda di WhatsApp! Temukan berbagai fitur yang disesuaikan dengan kebutuhan Anda\n`;
       const categories = new Set();
 
       for (const [filePath, command] of Object.entries(global.plugins)) {
         const cmd = command.default || command;
-        if (
-          !cmd ||
-          !cmd.command ||
-          !Array.isArray(cmd.command) ||
-          !cmd.command[0]
-        )
+        if (!cmd || !cmd.command || !Array.isArray(cmd.command) || !cmd.command[0]) {
           continue;
+        }
 
         const category = cmd.tags || "General";
         categories.add(category);
       }
 
-      const sections = [
-        {
-          title: "Categories",
-          rows: Array.from(categories).map((category) => ({
-            title: category,
-            id: `${m.prefix + m.command} ${category}`,
-            description: `View commands in the ${category} category`,
-          })),
-        },
-        {
-          title: "Main Info",
-          rows: [
-            {
-              title: "All Features",
-              id: `${m.prefix + m.command} all`,
-              description: "Menampilkan semua fitur category ( List Menu )",
-            },
-          ],
-        },
-      ];
-
-      return conn.sendListM(
-        m.chat,
-        body,
-        wm,
-        "https://telegra.ph/file/efba59850e2085da6cede.jpg",
-        sections,
-        m,
-        {
-          contextInfo: {
-            mentionedJid: [m.sender],
-          },
-        },
-      );
+      body += "\nKategori yang tersedia:\n";
+      Array.from(categories).forEach((category) => {
+        body += `- ${category}\n`;
+      });
+      
+      body += `\nGunakan *${m.prefix+m.command} <category>* untuk melihat menu kategori\nContoh: *${m.prefix+m.command} main*`
+ 
+      await conn.sendFThumb(m.chat, "Akane-Bot", body, "https://telegra.ph/file/fa1510a4a58687ef9a234.jpg", global.link, m)
     } else {
       let body = `Hai, @${m.sender.split("@")[0]} Berikut adalah daftar menu ${selectedCategory === "all" ? "semua kategori" : selectedCategory}\n`;
 
@@ -78,13 +38,9 @@ Pilih kategori di bawah untuk melihat perintah yang tersedia:`;
 
         for (const [filePath, command] of Object.entries(global.plugins)) {
           const cmd = command.default || command;
-          if (
-            !cmd ||
-            !cmd.command ||
-            !Array.isArray(cmd.command) ||
-            !cmd.command[0]
-          )
+          if (!cmd || !cmd.command || !Array.isArray(cmd.command) || !cmd.command[0]) {
             continue;
+          }
 
           const category = cmd.tags || "General";
           if (!commandsByCategory[category]) {
@@ -109,13 +65,9 @@ Pilih kategori di bawah untuk melihat perintah yang tersedia:`;
 
         for (const [filePath, command] of Object.entries(global.plugins)) {
           const cmd = command.default || command;
-          if (
-            !cmd ||
-            !cmd.command ||
-            !Array.isArray(cmd.command) ||
-            !cmd.command[0]
-          )
+          if (!cmd || !cmd.command || !Array.isArray(cmd.command) || !cmd.command[0]) {
             continue;
+          }
 
           const category = cmd.tags || "General";
           if (category.toLowerCase() === selectedCategory.toLowerCase()) {
@@ -127,9 +79,7 @@ Pilih kategori di bawah untuk melihat perintah yang tersedia:`;
         commandsInCategory
           .filter((cmd) => {
             const names = cmd.name;
-            return Array.isArray(names)
-              ? names.length > 0
-              : names !== undefined && names !== null && names !== "";
+            return Array.isArray(names) ? names.length > 0 : names !== undefined && names !== null && names !== "";
           })
           .forEach((cmd, index) => {
             const names = Array.isArray(cmd.name) ? cmd.name : [cmd.name];

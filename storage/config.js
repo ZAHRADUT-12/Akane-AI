@@ -10,13 +10,13 @@ global.wm = "Made from love";
 global.author = "Arifzyn";
 global.packname = "Created Sticker By";
 global.link = "https://akanebot.xyz";
-
-global.owner = ["6288213503541", "6285691464024"];
+ 
+global.owner = ["6285691464024", "62895347198105", "6287760363490"];
 global.pairingNumber = "62856914640248";
 
 global.session = "mongodb+srv://arifzyn906:VlaWRU3TW8u8enxe@akanebot.y7rw8bv.mongodb.net/?retryWrites=true&w=majority&appName=AkaneBot"
 global.prefix = /^[°•π÷×¶∆£¢€¥®™+✓_=|/~!?@#%^&.©^]/i;
-global.thumbnail = fs.readFileSync("./storage/media/images.jpg");
+global.thumbnail = fs.readFileSync("./storage/media/images.jpg"); 
 global.ucapan = Function.timeSpeech();
 global.func = Function;
 

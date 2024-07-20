@@ -2,7 +2,7 @@ export default {
   command: ["setlife"],
   description: "Set your life details",
   name: "setlife",
-  tags: "life",
+  tags: "utility",
 
   run: async (m, { conn }) => {
     const user = global.db.data.users[m.sender].life;

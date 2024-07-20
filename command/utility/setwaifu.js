@@ -2,7 +2,7 @@ export default {
   command: ["waifume"],
   description: "Show your waifu information",
   name: "waifume",
-  tags: "waifu",
+  tags: "utility",
 
   run: async (m, { conn, text, args, command }) => {
     let who =

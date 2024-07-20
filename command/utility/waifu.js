@@ -4,7 +4,7 @@ export default {
   command: ["waifu"],
   description: "Choose a waifu",
   name: "waifu",
-  tags: "life",
+  tags: "utility",
 
   run: async (m, { conn, text, args, isPrems, command }) => {
     const user = global.db.data.users[m.sender].life;
