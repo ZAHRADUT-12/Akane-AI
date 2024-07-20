@@ -76,6 +76,13 @@ export default new (class Function {
   Format(str) {
     return JSON.stringify(str, null, 2);
   }
+  
+  toDollar (x) {
+  x = x.toString();
+  var pattern = /(-?\d+)(\d{3})/;
+  while (pattern.test(x)) x = x.replace(pattern, "$1.$2");
+  return "$" + x;
+  }
 
   jam(numer, options = {}) {
     let format = options.format ? options.format : "HH:mm";

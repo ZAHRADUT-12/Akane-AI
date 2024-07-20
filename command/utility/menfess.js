@@ -4,7 +4,7 @@ export default {
   command: ['menfess', 'menfesschat', 'menfessstop', 'menfesssettimer'],
   description: "Menfess chat system for anonymous messaging",
   // example: "%pmenfess <nomor|pesan> | %pmenfesschat | %pmenfessstop | %pmenfesssettimer",
-  name: "menfess",
+  name: "utility",
   tags: "entertainment",
   private: true,
 
