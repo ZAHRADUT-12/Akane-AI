@@ -25,6 +25,7 @@
     "file-type": "^18.5.0",
     "fluent-ffmpeg": "^2.1.2",
     "glob": "^7.2.3",
+    "google-it": "^1.6.4",
     "https-proxy-agent": "^7.0.4",
     "lowdb": "^2.1.0",
     "moment-timezone": "^0.5.43",

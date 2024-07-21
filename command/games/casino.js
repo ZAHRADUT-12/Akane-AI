@@ -49,12 +49,12 @@ export default {
 
             let result;
             if (Aku > Kamu) {
-                result = `❌ *LOSE* ❌\nKamu kehilangan ${toDollar(count)} Balance.`;
+                result = `❌ *LOSE* ❌\nKamu kehilangan ${func.toDollar(count * 1)} Balance.`;
             } else if (Aku < Kamu) {
-                result = `🎉 *WIN* 🎉\nKamu menang ${toDollar(count)} Balance.`;
+                result = `🎉 *WIN* 🎉\nKamu menang ${func.toDollar(count * 2)} Balance.`;
                 global.db.data.users[m.sender].balance += count * 2;
             } else {
-                result = `🔖 *DRAW* 🔖\nKamu mendapatkan kembali ${toDollar(count)} Balance.`;
+                result = `🔖 *DRAW* 🔖\nKamu mendapatkan kembali ${func.toDollar(count * 1)} Balance.`;
                 global.db.data.users[m.sender].balance += count;
             }
 
@@ -85,8 +85,3 @@ ${result}
     wait: null,
     done: null,
 };
-
-// Fungsi toDollar
-function toDollar(amount) {
-    return `$${amount.toLocaleString()}`;
-}

@@ -47,7 +47,7 @@ global.APIs = {
 };
 
 global.APIKeys = {
-  "https://api.arifzyn.tech": process.env.APIKEY || "",
+  "https://api.arifzyn.tech": process.env.APIKEY || "AR-Arifzyn19",
   "https://api.itsrose.rest": process.env.ROSE_KEY || "",
   "https://api.xyro.fund": "xyroKey",
 };

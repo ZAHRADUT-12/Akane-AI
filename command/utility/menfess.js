@@ -4,8 +4,8 @@ export default {
   command: ['menfess', 'menfesschat', 'menfessstop', 'menfesssettimer'],
   description: "Menfess chat system for anonymous messaging",
   // example: "%pmenfess <nomor|pesan> | %pmenfesschat | %pmenfessstop | %pmenfesssettimer",
-  name: "utility",
-  tags: "entertainment",
+  name: "menfess",
+  tags: "utility",
   private: true,
 
   run: async (m, { conn, text, args, command }) => {
