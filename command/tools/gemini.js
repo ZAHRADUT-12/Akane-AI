@@ -20,7 +20,11 @@ export default {
         const path = await quoted.download();
         const mimeType = quoted.mime;
         response = await gemini.runGeminiVision(prompt, path, mimeType);
-      } else {
+      } else if (quoted.mime && /video/i.test(quoted.mime)) {
+        const path = await quoted.download();
+        const mimeType = quoted.mime;
+        response = await gemini.geminiPro(prompt, path, mimeType);
+      } else { 
         response = await gemini.runGeminiPro(prompt);
       }
 

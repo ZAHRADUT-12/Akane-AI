@@ -175,6 +175,7 @@ export default class Database {
         if (!isBoolean(chat.simi)) chat.simi = false;
         if (!isBoolean(chat.viewOnce)) chat.viewonce = false;
         if (!isBoolean(chat.welcome)) chat.welcome = true;
+        if (!isBoolean(chat.autodl)) chat.autodl = false;
       } else {
         db.data.chats[m.chat] = {
           antibot: false,
@@ -189,6 +190,7 @@ export default class Database {
           simi: false,
           viewonce: false,
           welcome: true,
+          autodl: false,
         };
       }
     }

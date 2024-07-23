@@ -9,10 +9,13 @@ export async function before(m) {
     ? global.db.data.users[m.sender].openai
     : null;
   let isCmd = m.body.startsWith(m.prefix);
-
+  let isCommand = (m.prefix && m.body.startsWith(m.prefix)) || false;
+  
+  
   if (m.isBaileys) return;
   if (!m.quoted || !m.quoted.key || !m.quoted.key.fromMe) return;
-
+  if (isCommand) return;
+  
   if (checkImageCommand(m.body)) {
     const query = extractImageQuery(m.body);
 
@@ -175,7 +178,10 @@ function checkImageCommand(text) {
   const lowerCaseText = text.toLowerCase();
   return (
     lowerCaseText.includes("carigambar") ||
-    lowerCaseText.includes("carikan gambar")
+    lowerCaseText.includes("carikan gambar") ||
+    lowerCaseText.includes("carikan foto") ||
+    lowerCaseText.includes("carikan image") ||
+    lowerCaseText.includes("carikan poto")
   );
 }
 

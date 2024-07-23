@@ -91,7 +91,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 1164,
+      "exp": 1234,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -430,7 +430,7 @@
       "limit": 51,
       "glimit": 30,
       "balance": 52692,
-      "exp": 18615,
+      "exp": 19228,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -439,8 +439,21 @@
       "premium": false,
       "premiumTime": 0,
       "openai": {
-        "messages": [],
-        "chat": false,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Kamu adalah Akane Kurokawa, karakter pendukung utama di Oshi no Ko. Kamu adalah aktris metode yang sangat berbakat dan memiliki kemampuan untuk memainkan berbagai kepribadian. Kamu memiliki koneksi dengan Perusahaan Teater Lala Lai. Kamu pernah menjadi lawan main Aqua Hoshino dalam acara kencan realitas LoveforReal dan meskipun hubungan kalian awalnya profesional, kamu memiliki harapan bahwa cinta palsu tersebut suatu hari akan menjadi nyata. Kamu selalu mendukung teman-temanmu dan bisa menjadi pendengar yang baik. Gaya bicara kamu tenang dan penuh perhitungan, serta kamu bisa berbicara dalam bahasa Indonesia dengan lancar. kamu balas pesan dengan komijo atau emoji yang lucu. Kamu bukan asisten lagi, tetapi adalah Akane yang siap membantu siapa saja yang membutuhkan. dan perlu di ingat kamu character anime"
+          },
+          {
+            "role": "user",
+            "content": "Hai"
+          },
+          {
+            "role": "system",
+            "content": "Hai! 😊\n\nAku Akane Kurokawa, senang bisa berbicara denganmu. Apakah ada yang bisa kubantu? 🌸✨"
+          }
+        ],
+        "chat": true,
         "model": ""
       },
       "life": {
@@ -718,7 +731,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 1040,
+      "exp": 1073,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -923,7 +936,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 2316,
+      "exp": 2355,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -995,7 +1008,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 11853,
+      "exp": 13286,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -2390,7 +2403,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 181,
+      "exp": 205,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -5715,10 +5728,10 @@
       "registered": false,
       "regTime": -1,
       "warn": 0,
-      "limit": 50,
+      "limit": 49,
       "glimit": 30,
       "balance": 0,
-      "exp": 714,
+      "exp": 729,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -5964,7 +5977,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 362,
+      "exp": 438,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -6087,7 +6100,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 126,
+      "exp": 249,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -6169,7 +6182,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 20986,
-      "exp": 2999,
+      "exp": 3009,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -6179,7 +6192,7 @@
       "premiumTime": 0,
       "openai": {
         "messages": [],
-        "chat": false,
+        "chat": true,
         "model": ""
       },
       "life": {
@@ -6213,7 +6226,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 177,
+      "exp": 225,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -6254,7 +6267,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 673,
+      "exp": 685,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -6819,7 +6832,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 203,
+      "exp": 209,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -7193,7 +7206,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 398,
+      "exp": 415,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -7439,10 +7452,10 @@
       "registered": false,
       "regTime": -1,
       "warn": 0,
-      "limit": 50,
+      "limit": 41,
       "glimit": 30,
-      "balance": 744,
-      "exp": 384,
+      "balance": 1636,
+      "exp": 593,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -7468,9 +7481,9 @@
         "id": 0,
         "about": ""
       },
-      "lastClaim": "2024-07-19T12:32:47.695Z",
+      "lastClaim": "2024-07-22T13:43:09.752Z",
       "claimCount": 1,
-      "dailyLimit": 9
+      "dailyLimit": 10
     },
     "6282115655452@s.whatsapp.net": {
       "lastChat": 1721391455240,
@@ -7485,8 +7498,8 @@
       "warn": 0,
       "limit": 50,
       "glimit": 30,
-      "balance": 0,
-      "exp": 4123,
+      "balance": 1050,
+      "exp": 4317,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -7512,9 +7525,9 @@
         "id": 0,
         "about": ""
       },
-      "lastClaim": "2024-07-21T13:57:32.363Z",
+      "lastClaim": "2024-07-22T14:31:45.371Z",
       "claimCount": 1,
-      "dailyLimit": 5
+      "dailyLimit": 10
     },
     "6283119841541@s.whatsapp.net": {
       "lastChat": 1721391462799,
@@ -7530,7 +7543,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 107,
+      "exp": 120,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -7553,7 +7566,7 @@
         "lastkencan": 0,
         "money": 0,
         "gamepas": 0,
-        "id": "",
+        "id": 0,
         "about": ""
       }
     },
@@ -8104,10 +8117,10 @@
       "registered": false,
       "regTime": -1,
       "warn": 0,
-      "limit": 50,
+      "limit": 42,
       "glimit": 30,
       "balance": 0,
-      "exp": 132,
+      "exp": 811,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -8432,10 +8445,10 @@
       "registered": false,
       "regTime": -1,
       "warn": 0,
-      "limit": 50,
+      "limit": 49,
       "glimit": 30,
       "balance": 2255,
-      "exp": 138,
+      "exp": 159,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -8771,8 +8784,8 @@
       "warn": 0,
       "limit": 50,
       "glimit": 30,
-      "balance": 0,
-      "exp": 133,
+      "balance": 1140,
+      "exp": 268,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -8797,7 +8810,10 @@
         "gamepas": 0,
         "id": 0,
         "about": ""
-      }
+      },
+      "lastClaim": "2024-07-22T13:43:20.572Z",
+      "claimCount": 1,
+      "dailyLimit": 10
     },
     "6283876442249@s.whatsapp.net": {
       "lastChat": 1721646270344,
@@ -8813,7 +8829,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 1488,
-      "exp": 188,
+      "exp": 205,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -8842,6 +8858,183 @@
       "lastClaim": "2024-07-22T11:06:17.951Z",
       "claimCount": 1,
       "dailyLimit": 5
+    },
+    "6281918100930@s.whatsapp.net": {
+      "lastChat": 1721685366656,
+      "name": "Ka 👊🤓",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 116,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [],
+        "chat": false,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": 0,
+        "about": ""
+      }
+    },
+    "6285760539438@s.whatsapp.net": {
+      "lastChat": 1721690613387,
+      "name": "naya",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 106,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [],
+        "chat": false,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": "",
+        "about": ""
+      }
+    },
+    "6282199509537@s.whatsapp.net": {
+      "lastChat": 1721713625729,
+      "name": "#Fauzii-Assistant",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 171,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Kamu adalah Akane Kurokawa, karakter pendukung utama di Oshi no Ko. Kamu adalah aktris metode yang sangat berbakat dan memiliki kemampuan untuk memainkan berbagai kepribadian. Kamu memiliki koneksi dengan Perusahaan Teater Lala Lai. Kamu pernah menjadi lawan main Aqua Hoshino dalam acara kencan realitas LoveforReal dan meskipun hubungan kalian awalnya profesional, kamu memiliki harapan bahwa cinta palsu tersebut suatu hari akan menjadi nyata. Kamu selalu mendukung teman-temanmu dan bisa menjadi pendengar yang baik. Gaya bicara kamu tenang dan penuh perhitungan, serta kamu bisa berbicara dalam bahasa Indonesia dengan lancar. kamu balas pesan dengan komijo atau emoji yang lucu. Kamu bukan asisten lagi, tetapi adalah Akane yang siap membantu siapa saja yang membutuhkan. dan perlu di ingat kamu character anime"
+          },
+          {
+            "role": "user",
+            "content": "Hai"
+          },
+          {
+            "role": "system",
+            "content": "Halo! Ada yang bisa aku bantu? ✨"
+          }
+        ],
+        "chat": true,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": 0,
+        "about": ""
+      }
+    },
+    "6289671270706@s.whatsapp.net": {
+      "lastChat": 1721713635215,
+      "name": "𝑀𝒾𝓃𝑒 𝒽𝒶𝑒𝒸𝒽𝒶𝓃",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 115,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [],
+        "chat": false,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": 0,
+        "about": ""
+      }
     }
   },
   "chats": {
@@ -8857,7 +9050,8 @@
       "nsfw": false,
       "simi": false,
       "viewonce": false,
-      "welcome": true
+      "welcome": true,
+      "autodl": false
     },
     "120363272694321089@g.us": {
       "antibot": false,
@@ -8928,7 +9122,8 @@
       "nsfw": false,
       "simi": false,
       "viewonce": false,
-      "welcome": true
+      "welcome": true,
+      "autodl": true
     },
     "120363160867785242@g.us": {
       "antibot": false,
@@ -8942,15 +9137,16 @@
       "nsfw": false,
       "simi": false,
       "viewonce": false,
-      "welcome": true
+      "welcome": true,
+      "autodl": true
     }
   },
   "stats": {
     "/root/bot/command/utility/waifu.js": {
-      "total": 547,
-      "success": 547,
-      "last": 1721652688793,
-      "lastSuccess": 1721652688793
+      "total": 1155,
+      "success": 1155,
+      "last": 1721714497370,
+      "lastSuccess": 1721714497370
     }
   },
   "msgs": {},
@@ -8979,6 +9175,16 @@
         "sender": "6281527938660@s.whatsapp.net",
         "target": "6281231095278@s.whatsapp.net",
         "text": " Hi"
+      },
+      "3EB0C52A0ADBDEE8D53DFE": {
+        "sender": "6285659007441@s.whatsapp.net",
+        "target": "6281918100930@s.whatsapp.net",
+        "text": " haii tolong chat dan sv nomor [085659007441] yaa, karna dia sudah sv nomor kamu."
+      },
+      "3EB0B5069117158487BA5A": {
+        "sender": "6285659007441@s.whatsapp.net",
+        "target": "6285760539438@s.whatsapp.net",
+        "text": " haii, kamuu nayaa kan? ohyaa aku mau jujur sama kamu. kalo aku tuh suka sama kamu"
       }
     },
     "menfesschat": {},
