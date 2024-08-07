@@ -1,38 +1,42 @@
 export default {
-	command: ["buylimit", "blimit"],
-	description: "Membeli limit menggunakan balance",
-	name: "buylimit",
-	tags: "balance", 
-	
-	run: async (m, { conn, args }) => {
-		if (args.length < 1) {
-			return m.reply(`Usage: ${m.prefix+m.command} <jumlah_limit>`);
-		} 
-		
-		let jumlahLimit = parseInt(args[0]);
-		let hargaPerLimit = 1000;
+  command: ["buylimit", "blimit"],
+  description: "Membeli limit menggunakan balance",
+  name: "buylimit",
+  tags: "balance",
 
-		if (isNaN(jumlahLimit) || jumlahLimit <= 0) {
-			return m.reply("Jumlah limit yang ingin dibeli harus berupa angka positif.");
-		}
+  run: async (m, { conn, args }) => {
+    if (args.length < 1) {
+      return m.reply(`Usage: ${m.prefix + m.command} <jumlah_limit>`);
+    }
 
-		let senderId = m.sender;
-		let sender = global.db.data.users[senderId];
+    let jumlahLimit = parseInt(args[0]);
+    let hargaPerLimit = 1000;
 
-		if (!sender) {
-			return m.reply("Pengguna tidak ditemukan dalam database.");
-		}
+    if (isNaN(jumlahLimit) || jumlahLimit <= 0) {
+      return m.reply(
+        "Jumlah limit yang ingin dibeli harus berupa angka positif.",
+      );
+    }
 
-		let totalHarga = jumlahLimit * hargaPerLimit;
+    let senderId = m.sender;
+    let sender = global.db.data.users[senderId];
 
-		if (sender.balance < totalHarga) {
-			return m.reply("Balance Anda tidak mencukupi untuk membeli limit ini.");
-		}
+    if (!sender) {
+      return m.reply("Pengguna tidak ditemukan dalam database.");
+    }
 
-		// Lakukan pembelian
-		sender.balance -= totalHarga;
-		sender.limit = (sender.limit || 0) + jumlahLimit;
+    let totalHarga = jumlahLimit * hargaPerLimit;
 
-		m.reply(`Pembelian berhasil! Anda telah membeli ${jumlahLimit} limit dengan total harga ${func.toDollar(totalHarga)}.\nBalance Anda sekarang: ${func.toDollar(sender.balance)}\nLimit Anda sekarang: ${sender.limit}`);
-	}
-}
+    if (sender.balance < totalHarga) {
+      return m.reply("Balance Anda tidak mencukupi untuk membeli limit ini.");
+    }
+
+    // Lakukan pembelian
+    sender.balance -= totalHarga;
+    sender.limit = (sender.limit || 0) + jumlahLimit;
+
+    m.reply(
+      `Pembelian berhasil! Anda telah membeli ${jumlahLimit} limit dengan total harga ${func.toDollar(totalHarga)}.\nBalance Anda sekarang: ${func.toDollar(sender.balance)}\nLimit Anda sekarang: ${sender.limit}`,
+    );
+  },
+};

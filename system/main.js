@@ -13,7 +13,7 @@ import syntaxerror from "syntax-error";
 import { Boom } from "@hapi/boom";
 import NodeCache from "node-cache";
 import baileys, { jidNormalizedUser } from "@whiskeysockets/baileys";
-import { useMongoAuthState } from "session"
+import { useMongoAuthState } from "session";
 
 import {
   plugins,
@@ -64,11 +64,12 @@ async function start() {
   await database.loadDatabase();
 
   const msgRetryCounterCache = new NodeCache();
-  const { state, saveCreds } =
-    await useMongoAuthState(global.session, {
-    	tableName: "Akane",
-    	session: "AkaneBot-Auth"
-    });
+  const { state, saveCreds } = /mongodb(\+srv)?:\/\//i.test(global.session)
+    ? await useMongoAuthState(global.session, {
+        tableName: "Akane",
+        session: "AkaneBot-Auth",
+      })
+    : await baileys.useMultiFileAuthState(global.session);
   const conn = baileys.default({
     logger,
     printQRInTerminal: false,
@@ -241,19 +242,6 @@ async function start() {
       let id = jidNormalizedUser(contact.id);
       if (store && store.contacts)
         store.contacts[id] = { ...(contact || {}), isContact: true };
-    }
-  });
-
-  // nambah perubahan grup ke store
-  conn.ev.on("groups.update", (updates) => {
-    for (const update of updates) {
-      const id = update.id;
-      if (store.groupMetadata[id]) {
-        store.groupMetadata[id] = {
-          ...(store.groupMetadata[id] || {}),
-          ...(update || {}),
-        };
-      }
     }
   });
 

@@ -16,12 +16,14 @@ export default {
     try {
       const isAudio = m.command === "ytmp3";
       const result = await scraper.youtube.play(func.isUrl(url)[0]);
-      const responseUrl = isAudio ? result.audio["128"].url : result.video["720p"].url;
-      const title = result.title.replace(/[\\/:*?"<>|]/g, ''); // remove illegal characters for file names
+      const responseUrl = isAudio
+        ? result.audio["128"].url
+        : result.video["720p"].url;
+      const title = result.title.replace(/[\\/:*?"<>|]/g, ""); // remove illegal characters for file names
       const extension = isAudio ? "mp3" : "mp4";
       const filename = `${title}.${extension}`;
-       
-      await m.reply(responseUrl, { 
+
+      await m.reply(responseUrl, {
         mimetype: isAudio ? "audio/mpeg" : "video/mp4",
         fileName: filename,
       });

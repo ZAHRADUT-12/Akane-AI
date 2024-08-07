@@ -11,7 +11,7 @@ class GeminiAI {
     this.fileManager = new GoogleAIFileManager(apiKey);
   }
 
-  async runGeminiPro(prompt) { 
+  async runGeminiPro(prompt) {
     const model = this.genAI.getGenerativeModel({ model: "gemini-pro" });
     const result = await model.generateContent(prompt);
     const response = await result.response;
@@ -19,26 +19,30 @@ class GeminiAI {
     console.log(text);
     return text;
   }
-  
+
   async uploadToGemini(buffer, mimeType) {
     const tmpFile = tmp.fileSync();
     fs.writeFileSync(tmpFile.name, buffer);
 
-    const { file } = await this.fileManager.uploadFile(tmpFile.name, { mimeType, displayName: "uploadedFile" });
+    const { file } = await this.fileManager.uploadFile(tmpFile.name, {
+      mimeType,
+      displayName: "uploadedFile",
+    });
     console.log(`Uploaded file ${file.displayName} as: ${file.name}`);
     return file;
   }
-  
+
   async waitForFilesActive(files) {
     console.log("Waiting for file processing...");
     for (const { name } of files) {
       let file = await this.fileManager.getFile(name);
       while (file.state === "PROCESSING") {
         process.stdout.write(".");
-        await new Promise(resolve => setTimeout(resolve, 10000));
+        await new Promise((resolve) => setTimeout(resolve, 10000));
         file = await this.fileManager.getFile(name);
       }
-      if (file.state !== "ACTIVE") throw new Error(`File ${name} failed to process`);
+      if (file.state !== "ACTIVE")
+        throw new Error(`File ${name} failed to process`);
     }
     console.log("...all files ready\n");
   }
@@ -54,7 +58,7 @@ class GeminiAI {
 
   async runGeminiVision(prompt, buffer) {
     const { mime } = await fileTypeFromBuffer(buffer);
-    const files = [await this.uploadToGemini(buffer, mime)]; 
+    const files = [await this.uploadToGemini(buffer, mime)];
     await this.waitForFilesActive(files);
 
     const model = this.genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
@@ -64,10 +68,15 @@ class GeminiAI {
     const text = response.text();
     return text;
   }
-  
+
   async geminiPro(prompt, buffer) {
     const model = this.genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
-    const generationConfig = { temperature: 1, topP: 0.95, topK: 64, maxOutputTokens: 8192 };
+    const generationConfig = {
+      temperature: 1,
+      topP: 0.95,
+      topK: 64,
+      maxOutputTokens: 8192,
+    };
     const { mime } = await fileTypeFromBuffer(buffer);
     const files = [await this.uploadToGemini(buffer, mime)];
     await this.waitForFilesActive(files);
@@ -75,7 +84,14 @@ class GeminiAI {
     const chatSession = model.startChat({
       generationConfig,
       history: [
-        { role: "user", parts: [{ fileData: { mimeType: files[0].mimeType, fileUri: files[0].uri } }] },
+        {
+          role: "user",
+          parts: [
+            {
+              fileData: { mimeType: files[0].mimeType, fileUri: files[0].uri },
+            },
+          ],
+        },
         { role: "user", parts: [{ text: prompt }] },
       ],
     });

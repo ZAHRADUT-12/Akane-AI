@@ -1,49 +1,49 @@
 export default {
-	command: ["info", "server"],
-	name: ["info", "server"],
-	tags: "main", 
-	
-	run: async (m, { conn }) => {
-		 let os = (await import("os")).default;
-          let v8 = (await import("v8")).default;
-          let { performance } = (await import("perf_hooks")).default;
-          let eold = performance.now();
+  command: ["info", "server"],
+  name: ["info", "server"],
+  tags: "main",
 
-          const used = process.memoryUsage();
-          const cpus = os.cpus().map((cpu) => {
-            cpu.total = Object.keys(cpu.times).reduce(
-              (last, type) => last + cpu.times[type],
-              0,
-            );
-            return cpu;
-          });
-          const cpu = cpus.reduce(
-            (last, cpu, _, { length }) => {
-              last.total += cpu.total;
-              last.speed += cpu.speed / length;
-              last.times.user += cpu.times.user;
-              last.times.nice += cpu.times.nice;
-              last.times.sys += cpu.times.sys;
-              last.times.idle += cpu.times.idle;
-              last.times.irq += cpu.times.irq;
-              return last;
-            },
-            {
-              speed: 0,
-              total: 0,
-              times: {
-                user: 0,
-                nice: 0,
-                sys: 0,
-                idle: 0,
-                irq: 0,
-              },
-            },
-          );
-          let heapStat = v8.getHeapStatistics();
-          let neow = performance.now();
+  run: async (m, { conn }) => {
+    let os = (await import("os")).default;
+    let v8 = (await import("v8")).default;
+    let { performance } = (await import("perf_hooks")).default;
+    let eold = performance.now();
 
-          let teks = `
+    const used = process.memoryUsage();
+    const cpus = os.cpus().map((cpu) => {
+      cpu.total = Object.keys(cpu.times).reduce(
+        (last, type) => last + cpu.times[type],
+        0,
+      );
+      return cpu;
+    });
+    const cpu = cpus.reduce(
+      (last, cpu, _, { length }) => {
+        last.total += cpu.total;
+        last.speed += cpu.speed / length;
+        last.times.user += cpu.times.user;
+        last.times.nice += cpu.times.nice;
+        last.times.sys += cpu.times.sys;
+        last.times.idle += cpu.times.idle;
+        last.times.irq += cpu.times.irq;
+        return last;
+      },
+      {
+        speed: 0,
+        total: 0,
+        times: {
+          user: 0,
+          nice: 0,
+          sys: 0,
+          idle: 0,
+          irq: 0,
+        },
+      },
+    );
+    let heapStat = v8.getHeapStatistics();
+    let neow = performance.now();
+
+    let teks = `
 *Ping :* *_${Number(neow - eold).toFixed(2)} milisecond(s)_*
 
 💻 *_Info Server_*
@@ -106,6 +106,6 @@ ${cpus
     : ""
 }
 `.trim();
-          await m.reply(teks);
-	}
-}
+    await m.reply(teks);
+  },
+};

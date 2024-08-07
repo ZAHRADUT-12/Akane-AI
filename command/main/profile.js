@@ -1,12 +1,12 @@
 export default {
-	command: ["profile", "me"],
-	name: ["profile", "me"],
-	tags: "main",
-	
-	run: async (m) => {
-		const user = global.db.data.users[m.sender]; 
-		
-		const txt = `
+  command: ["profile", "me"],
+  name: ["profile", "me"],
+  tags: "main",
+
+  run: async (m) => {
+    const user = global.db.data.users[m.sender];
+
+    const txt = `
 *👤 Nama:* ${user.name || m.pushName}
 *📊 Level:* ${user.level}
 *🏅 Peringkat:* ${user.grade}
@@ -26,6 +26,6 @@ export default {
 *🔄 Jumlah Klaim:* ${user.claimCount}
 *🔢 Batas Harian:* ${user.dailyLimit}
 `.trim();
-		await m.reply(txt);
-	}
-}
+    await m.reply(txt);
+  },
+};

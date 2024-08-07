@@ -213,23 +213,24 @@ export default class Database {
         self: false,
       };
     }
-    
-    let datas = db.data.datas
-    if (typeof datas !== 'object') db.data.datas = {}
+
+    let datas = db.data.datas;
+    if (typeof datas !== "object") db.data.datas = {};
     if (datas) {
-      if (!('menfess' in datas)) datas.menfess = {}	
-      if (!('menfesschat' in datas)) datas.menfesschat = {}
-      if (!('menfesschatcd' in datas)) datas.menfesschatcd = 0 
-      if (!('changelog' in datas)) datas.changelog = []
-      if (!('request' in datas)) datas.request = []
-      if (!('anime' in datas)) datas.anime = []
-    } else db.data.datas = {
-      menfess: {},
-      menfesschat: {},
-      menfesschatcd: 0,
-      changelog: [],
-      request: [],
-      anime: [],
-    }
+      if (!("menfess" in datas)) datas.menfess = {};
+      if (!("menfesschat" in datas)) datas.menfesschat = {};
+      if (!("menfesschatcd" in datas)) datas.menfesschatcd = 0;
+      if (!("changelog" in datas)) datas.changelog = [];
+      if (!("request" in datas)) datas.request = [];
+      if (!("anime" in datas)) datas.anime = [];
+    } else
+      db.data.datas = {
+        menfess: {},
+        menfesschat: {},
+        menfesschatcd: 0,
+        changelog: [],
+        request: [],
+        anime: [],
+      };
   }
 }

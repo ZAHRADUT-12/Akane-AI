@@ -31,5 +31,5 @@ function pinterest(querry) {
 }
 
 export default {
-	pinterest 
-}
+  pinterest,
+};

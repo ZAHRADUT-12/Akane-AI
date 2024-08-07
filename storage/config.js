@@ -1,3 +1,5 @@
+import "dotenv/config";
+
 import fs from "fs";
 import chalk from "chalk";
 import { fileURLToPath } from "url";
@@ -5,18 +7,18 @@ import Function from "../system/lib/function.js";
 
 //—————「 Setings your bot 」—————//
 global.name = "Akane - Bot";
-global.wm = "Made from love";
+global.wm = "Copyright © 2024 AkaneBot";
 
 global.author = "Arifzyn";
 global.packname = "Created Sticker By";
 global.link = "https://akanebot.xyz";
- 
+
 global.owner = ["6285691464024", "62895347198105", "6287760363490"];
 global.pairingNumber = "62856914640248";
 
-global.session = "mongodb+srv://arifzyn906:VlaWRU3TW8u8enxe@akanebot.y7rw8bv.mongodb.net/?retryWrites=true&w=majority&appName=AkaneBot"
+global.session = process.env.SESSION || "session";
 global.prefix = /^[°•π÷×¶∆£¢€¥®™+✓_=|/~!?@#%^&.©^]/i;
-global.thumbnail = fs.readFileSync("./storage/media/images.jpg"); 
+global.thumbnail = fs.readFileSync("./storage/media/images.jpg");
 global.ucapan = Function.timeSpeech();
 global.func = Function;
 
@@ -47,7 +49,7 @@ global.APIs = {
 };
 
 global.APIKeys = {
-  "https://api.arifzyn.tech": process.env.APIKEY || "AR-Arifzyn19",
+  "https://api.arifzyn.tech": process.env.AR_KEY || "",
   "https://api.itsrose.rest": process.env.ROSE_KEY || "",
   "https://api.xyro.fund": "xyroKey",
 };

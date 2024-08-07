@@ -120,34 +120,36 @@ export function Client({ conn, store }) {
     },
 
     getName: {
-  value(jid) {
-    let id = conn.decodeJid(jid), v;
+      value(jid) {
+        let id = conn.decodeJid(jid),
+          v;
 
-    if (id?.endsWith("@g.us")) {
-      return new Promise(async (resolve) => {
-        v = await store.fetchGroupMetadata(jid, conn) || {}
-					resolve(v.name || v.subject || id.replace("@g.us", ""))
-      });
-    } else {
-      v = id === "0@s.whatsapp.net"
-        ? { id, name: "WhatsApp" }
-        : id === conn.decodeJid(conn?.user?.id)
-          ? conn.user
-          : conn.contacts?.[id] || {};
-    }
+        if (id?.endsWith("@g.us")) {
+          return new Promise(async (resolve) => {
+            v = (await store.fetchGroupMetadata(jid, conn)) || {};
+            resolve(v.name || v.subject || id.replace("@g.us", ""));
+          });
+        } else {
+          v =
+            id === "0@s.whatsapp.net"
+              ? { id, name: "WhatsApp" }
+              : id === conn.decodeJid(conn?.user?.id)
+                ? conn.user
+                : conn.contacts?.[id] || {};
+        }
 
-    return (
-      v?.name ||
-      v?.subject ||
-      v?.pushName ||
-      v?.notify ||
-      v?.verifiedName ||
-      parsePhoneNumber("+" + id.replace("@s.whatsapp.net", "")).format(
-        "INTERNATIONAL",
-      )
-    );
-  },
-},
+        return (
+          v?.name ||
+          v?.subject ||
+          v?.pushName ||
+          v?.notify ||
+          v?.verifiedName ||
+          parsePhoneNumber("+" + id.replace("@s.whatsapp.net", "")).format(
+            "INTERNATIONAL",
+          )
+        );
+      },
+    },
 
     sendContact: {
       async value(jid, number, quoted, options = {}) {
@@ -584,7 +586,7 @@ export function Client({ conn, store }) {
       enumerable: true,
       writable: true,
     },
-    
+
     reply: {
       /**
        * Reply to a message
@@ -596,15 +598,11 @@ export function Client({ conn, store }) {
       value(jid, text = "", quoted, options = {}) {
         return Buffer.isBuffer(text)
           ? conn.sendFile(jid, text, "file", "", quoted, false, options)
-          : conn.sendMessage(
-              jid,
-              { ...options, text },
-              { quoted, ...options },
-            );
+          : conn.sendMessage(jid, { ...options, text }, { quoted, ...options });
       },
       writable: true,
     },
-    
+
     msToDate: {
       value(ms) {
         let days = Math.floor(ms / (24 * 60 * 60 * 1000));
@@ -668,7 +666,7 @@ export function Client({ conn, store }) {
       },
       enumerable: true,
     },
-    
+
     sendMsg: {
       async value(jid, message = {}, options = {}) {
         return await conn.sendMessage(jid, message, {
@@ -752,7 +750,6 @@ export function Client({ conn, store }) {
       enumerable: false,
       writable: true,
     },
-    
   });
 
   if (conn.user?.id) conn.user.jid = conn.decodeJid(conn.user?.id);

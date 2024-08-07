@@ -10,12 +10,11 @@ export async function before(m) {
     : null;
   let isCmd = m.body.startsWith(m.prefix);
   let isCommand = (m.prefix && m.body.startsWith(m.prefix)) || false;
-  
-  
+
   if (m.isBaileys) return;
   if (!m.quoted || !m.quoted.key || !m.quoted.key.fromMe) return;
   if (isCommand) return;
-  
+
   if (checkImageCommand(m.body)) {
     const query = extractImageQuery(m.body);
 
@@ -96,15 +95,9 @@ export async function before(m) {
 
       let tracks = response1.data;
 
-      conn.sendMessage(
-        m.chat,
-        {
-          audio: {
-            url: `https://spotifyapi.caliphdev.com/api/download/track?url=${tracks[0].url}`,
-          },
-          mimetype: "audio/mpeg",
-        },
-        { quoted: m },
+      await m.reply(
+        `https://spotifyapi.caliphdev.com/api/download/track?url=${tracks[0].url}`,
+        { mimetype: "audio/mpeg" },
       );
       return m.reply(
         `Berikut adalah lagu yang kamu pilih: ${tracks[0].title} - ${tracks[0].artist}`,

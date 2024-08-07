@@ -1,6 +1,6 @@
 import GeminiAI from "../../storage/scraper/gemini.js";
 
-const gemini = new GeminiAI("AIzaSyDYEhk9stqfq1cvzdjBRiK1-Axxkb79y54");
+const gemini = new GeminiAI(process.env.GEMINI_API);
 
 export default {
   command: ["gemini", "gemini-ai"],
@@ -24,7 +24,7 @@ export default {
         const path = await quoted.download();
         const mimeType = quoted.mime;
         response = await gemini.geminiPro(prompt, path, mimeType);
-      } else { 
+      } else {
         response = await gemini.runGeminiPro(prompt);
       }
 

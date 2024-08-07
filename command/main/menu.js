@@ -13,7 +13,12 @@ export default {
 
       for (const [filePath, command] of Object.entries(global.plugins)) {
         const cmd = command.default || command;
-        if (!cmd || !cmd.command || !Array.isArray(cmd.command) || !cmd.command[0]) {
+        if (
+          !cmd ||
+          !cmd.command ||
+          !Array.isArray(cmd.command) ||
+          !cmd.command[0]
+        ) {
           continue;
         }
 
@@ -25,10 +30,17 @@ export default {
       Array.from(categories).forEach((category) => {
         body += `- ${category}\n`;
       });
-      
-      body += `\nGunakan *${m.prefix+m.command} <category>* untuk melihat menu kategori\nContoh: *${m.prefix+m.command} main*`
- 
-      await conn.sendFThumb(m.chat, "Akane-Bot", body, "https://telegra.ph/file/fa1510a4a58687ef9a234.jpg", global.link, m)
+
+      body += `\nGunakan *${m.prefix + m.command} <category>* untuk melihat menu kategori\nContoh: *${m.prefix + m.command} main*`;
+
+      await conn.sendFThumb(
+        m.chat,
+        "Akane-Bot",
+        body,
+        "https://telegra.ph/file/fa1510a4a58687ef9a234.jpg",
+        global.link,
+        m,
+      );
     } else {
       let body = `Hai, @${m.sender.split("@")[0]} Berikut adalah daftar menu ${selectedCategory === "all" ? "semua kategori" : selectedCategory}\n`;
 
@@ -38,7 +50,12 @@ export default {
 
         for (const [filePath, command] of Object.entries(global.plugins)) {
           const cmd = command.default || command;
-          if (!cmd || !cmd.command || !Array.isArray(cmd.command) || !cmd.command[0]) {
+          if (
+            !cmd ||
+            !cmd.command ||
+            !Array.isArray(cmd.command) ||
+            !cmd.command[0]
+          ) {
             continue;
           }
 
@@ -65,7 +82,12 @@ export default {
 
         for (const [filePath, command] of Object.entries(global.plugins)) {
           const cmd = command.default || command;
-          if (!cmd || !cmd.command || !Array.isArray(cmd.command) || !cmd.command[0]) {
+          if (
+            !cmd ||
+            !cmd.command ||
+            !Array.isArray(cmd.command) ||
+            !cmd.command[0]
+          ) {
             continue;
           }
 
@@ -79,7 +101,9 @@ export default {
         commandsInCategory
           .filter((cmd) => {
             const names = cmd.name;
-            return Array.isArray(names) ? names.length > 0 : names !== undefined && names !== null && names !== "";
+            return Array.isArray(names)
+              ? names.length > 0
+              : names !== undefined && names !== null && names !== "";
           })
           .forEach((cmd, index) => {
             const names = Array.isArray(cmd.name) ? cmd.name : [cmd.name];

@@ -15,13 +15,13 @@ const isNumber = (x) => typeof x === "number" && !isNaN(x);
 const database = new (await import("./lib/database.js")).default();
 
 global.plugins = plugins;
-global.scraper = scraper
+global.scraper = scraper;
 
 import { translate } from "@vitalets/google-translate-api";
 
 export async function handler(conn, m, chatUpdate, store) {
   conn.msgqueue = conn.msgqueue || [];
-  global.store = store
+  global.store = store;
   if (!m || typeof m !== "object") return;
 
   try {
@@ -36,7 +36,7 @@ export async function handler(conn, m, chatUpdate, store) {
     m.limit = false;
 
     // Check if user is premium
-    const isPrems = m.isOwner || (db.data.users[m.sender]?.premium || false);
+    const isPrems = m.isOwner || db.data.users[m.sender]?.premium || false;
 
     // Handle message queue based on settings and user permissions
     if (db.data.settings.queue && m.body && !isPrems) {
@@ -142,7 +142,7 @@ export async function handler(conn, m, chatUpdate, store) {
 
           // Check if plugin has limit and enforce it
           if (!isPrems && plugin.limit && user.limit < plugin.limit * 1) {
-            m.reply("limit"); 
+            m.reply("limit");
             continue;
           }
 
@@ -152,7 +152,7 @@ export async function handler(conn, m, chatUpdate, store) {
               plugin.example
                 .replace(/%p/gi, m.prefix)
                 .replace(/%cmd/gi, m.command)
-                .replace(/%text/gi, text)
+                .replace(/%text/gi, text),
             );
             continue;
           }
@@ -192,50 +192,52 @@ export async function handler(conn, m, chatUpdate, store) {
     console.error(e);
   } finally {
     if (m.isGroup) {
-			//auto typing / record
-			if (db.data.chats[m.chat].presence) await this.sendPresenceUpdate(['composing', 'recording'].getRandom(), m.chat) 
-		}
-		if (db.data.settings.queue && m.body) {
-			const id = m.id
-			this.msgqueque.unqueue(id)
-		}
-		// console.log(db.data.users[m.sender])
-		let user, stats = db.data.stats
-		if (m) {
-			if (m.sender && (user = db.data.users[m.sender])) {
-				user.exp += m.exp
-				user.limit -= m.limit * 1
-				// console.log(m.limit * 1)
-			}
+      //auto typing / record
+      if (db.data.chats[m.chat].presence)
+        await this.sendPresenceUpdate(
+          ["composing", "recording"].getRandom(),
+          m.chat,
+        );
+    }
+    if (db.data.settings.queue && m.body) {
+      const id = m.id;
+      this.msgqueque.unqueue(id);
+    }
+    // console.log(db.data.users[m.sender])
+    let user,
+      stats = db.data.stats;
+    if (m) {
+      if (m.sender && (user = db.data.users[m.sender])) {
+        user.exp += m.exp;
+        user.limit -= m.limit * 1;
+        // console.log(m.limit * 1)
+      }
 
-			let stat
-			if (m.plugin) {
-				let now = +new Date
-				if (m.plugin in stats) {
-					stat = stats[m.plugin]
-					if (!isNumber(stat.total))
-						stat.total = 1
-					if (!isNumber(stat.success))
-						stat.success = m.error != null ? 0 : 1
-					if (!isNumber(stat.last))
-						stat.last = now
-					if (!isNumber(stat.lastSuccess))
-						stat.lastSuccess = m.error != null ? 0 : now
-				} else
-					stat = stats[m.plugin] = {
-						total: 1,
-						success: m.error != null ? 0 : 1,
-						last: now,
-						lastSuccess: m.error != null ? 0 : now
-					}
-				stat.total += 1
-				stat.last = now
-				if (m.error == null) {
-					stat.success += 1
-					stat.lastSuccess = now
-				}
-			}
-		}
+      let stat;
+      if (m.plugin) {
+        let now = +new Date();
+        if (m.plugin in stats) {
+          stat = stats[m.plugin];
+          if (!isNumber(stat.total)) stat.total = 1;
+          if (!isNumber(stat.success)) stat.success = m.error != null ? 0 : 1;
+          if (!isNumber(stat.last)) stat.last = now;
+          if (!isNumber(stat.lastSuccess))
+            stat.lastSuccess = m.error != null ? 0 : now;
+        } else
+          stat = stats[m.plugin] = {
+            total: 1,
+            success: m.error != null ? 0 : 1,
+            last: now,
+            lastSuccess: m.error != null ? 0 : now,
+          };
+        stat.total += 1;
+        stat.last = now;
+        if (m.error == null) {
+          stat.success += 1;
+          stat.lastSuccess = now;
+        }
+      }
+    }
 
     // Log the command execution
     if (!m.isBaileys && !m.fromMe) {
@@ -247,7 +249,7 @@ export async function handler(conn, m, chatUpdate, store) {
         "in",
         chalk.cyan(m.isGroup ? m.metadata.subject : "private chat"),
         "args :",
-        chalk.green(m.body?.length || 0)
+        chalk.green(m.body?.length || 0),
       );
     }
   }
