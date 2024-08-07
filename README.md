@@ -15,7 +15,8 @@
 
 ## Konfigurasi ⚙️
 
-Mengedit nomor owner & nama bot di [`config.js`](https://github.com/Arifzyn19/Akane/blob/main/storage/config.js)
+Silahkan replace [`.env.example`](https://github.com/Arifzyn19/Akane-AI/blob/main/.env.example) ubah jadi [`.env`] silahkan edit configurasi di dalam.
+Mengedit nomor owner & nama bot di [`config.js`](https://github.com/Arifzyn19/Akane-AI/blob/main/storage/config.js)
 
 ## Untuk user windows/rdp 💻
 
@@ -36,8 +37,8 @@ Instal alat ini terlebih dahulu sebelum menjalankan skrip
 - apt-get install -y nodejs
 
 ```bash
-git clone https://github.com/ArifzynXD/Akane
-cd Akane
+git clone https://github.com/ArifzynXD/Akane-AI
+cd Akane-AI
 npm install
 npm update
 ```
