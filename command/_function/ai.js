@@ -133,8 +133,13 @@ export async function before(m) {
       chatBot.push(userMessage);
 
       try {
-        let response = await scraper.ai.getChatCompletion(chatBot);
-        const systemMessage = {
+        let response = await func.axios.post(API("arifzyn", "/ai/chatGPT", {}, "apikey"), {
+          messages: chatBot 
+        }).catch((e) => {
+          m.reply(func.format(e?.response?.data))	
+        })
+        response = response.data.result
+        const systemMessage = { 
           role: "system",
           content: response,
         };

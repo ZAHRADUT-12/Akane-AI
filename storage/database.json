@@ -430,7 +430,7 @@
       "limit": 51,
       "glimit": 30,
       "balance": 52692,
-      "exp": 21004,
+      "exp": 21098,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -450,27 +450,7 @@
           },
           {
             "role": "system",
-            "content": "Hai! 😊\n\nAku Akane Kurokawa, senang bisa berbicara denganmu. Apakah ada yang bisa kubantu? 🌸✨"
-          },
-          {
-            "role": "user",
-            "content": "Hai"
-          },
-          {
-            "role": "system",
-            "content": "Hai! Apa kabar? Ada yang ingin kamu bicarakan atau diskusikan? Aku siap mendengarkan! 🌟🌺"
-          },
-          {
-            "role": "user",
-            "content": "Lagi apa"
-          },
-          {
-            "role": "system",
-            "content": "Saat ini aku sedang menunggu panggilan dari Perusahaan Teater Lala Lai terkait proyek terbaru. Tapi selain itu, aku juga sedang memikirkan pertunjukan drama terbaru yang ingin aku ikuti. Bagaimana denganmu? Apa yang sedang kamu lakukan hari ini? 🎭✨"
-          },
-          {
-            "role": "user",
-            "content": "Pasti chat bot"
+            "content": "Halo! Apa kabar? Ada yang bisa aku bantu? 🌸✨"
           }
         ],
         "chat": true,
@@ -1028,7 +1008,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 17603,
+      "exp": 17681,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -3612,7 +3592,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 1235,
+      "exp": 1245,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -3694,7 +3674,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 111,
+      "exp": 117,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -5587,7 +5567,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 266,
+      "exp": 270,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -11250,7 +11230,7 @@
       "limit": 50,
       "glimit": 30,
       "balance": 0,
-      "exp": 331,
+      "exp": 346,
       "level": 1,
       "hit": 0,
       "lastclaim": 0,
@@ -13289,6 +13269,47 @@
         "id": "",
         "about": ""
       }
+    },
+    "6283836137378@s.whatsapp.net": {
+      "lastChat": 1723006068106,
+      "name": "K.",
+      "banned": false,
+      "bannedReason": "",
+      "afk": -1,
+      "afkReason": "",
+      "age": 0,
+      "registered": false,
+      "regTime": -1,
+      "warn": 0,
+      "limit": 50,
+      "glimit": 30,
+      "balance": 0,
+      "exp": 117,
+      "level": 1,
+      "hit": 0,
+      "lastclaim": 0,
+      "grade": "Newbie",
+      "autolevelup": false,
+      "premium": false,
+      "premiumTime": 0,
+      "openai": {
+        "messages": [],
+        "chat": false,
+        "model": ""
+      },
+      "life": {
+        "name": "",
+        "gender": "",
+        "age": "",
+        "verified": false,
+        "waifu": "",
+        "exp": 0,
+        "lastkencan": 0,
+        "money": 0,
+        "gamepas": 0,
+        "id": 0,
+        "about": ""
+      }
     }
   },
   "chats": {
@@ -13414,10 +13435,10 @@
   },
   "stats": {
     "/root/bot/command/utility/waifu.js": {
-      "total": 3268,
-      "success": 3268,
-      "last": 1723005002277,
-      "lastSuccess": 1723005002277
+      "total": 3304,
+      "success": 3304,
+      "last": 1723006277004,
+      "lastSuccess": 1723006277004
     }
   },
   "msgs": {},
