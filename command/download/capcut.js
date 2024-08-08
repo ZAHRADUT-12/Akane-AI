@@ -17,7 +17,12 @@ export default {
 
     try {
       let response = await func.fetchJson(
-        API("arifzyn", "/download/capcut", { url: func.isUrl(url)[0] }, "apikey"),
+        API(
+          "arifzyn",
+          "/download/capcut",
+          { url: func.isUrl(url)[0] },
+          "apikey",
+        ),
       );
 
       if (response.status !== 200) {
@@ -25,7 +30,7 @@ export default {
       }
 
       await m.reply(response?.result?.url, {
-        caption: `Title: ${response.result.title}\nAction: ${response.result.action}\nAuthor: ${response.result.author.name}\nDescription: ${response.result.author.desc}`
+        caption: `Title: ${response.result.title}\nAction: ${response.result.action}\nAuthor: ${response.result.author.name}\nDescription: ${response.result.author.desc}`,
       });
     } catch (err) {
       conn.logger.error(`Error fetching Capcut video:`, err);

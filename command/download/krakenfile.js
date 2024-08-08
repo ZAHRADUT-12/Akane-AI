@@ -1,4 +1,4 @@
-import mime from 'mime-types';
+import mime from "mime-types";
 
 export default {
   command: ["krakenfiles", "kraken", "kf"],
@@ -10,7 +10,7 @@ export default {
   run: async (m, { conn }) => {
     const url = m.text;
 
-    if (!func.isUrl(url)) 
+    if (!func.isUrl(url))
       return m.reply(
         `Invalid URL\n\nContoh: ${m.prefix + m.command} https://krakenfiles.com/view/yZwSMqKSU7/file.html`,
       );
@@ -19,7 +19,12 @@ export default {
 
     try {
       let response = await func.fetchJson(
-        API("arifzyn", "/download/krakenfiles", { url: func.isUrl(url)[0] }, "apikey"),
+        API(
+          "arifzyn",
+          "/download/krakenfiles",
+          { url: func.isUrl(url)[0] },
+          "apikey",
+        ),
       );
 
       if (response.status !== 200) {
@@ -28,13 +33,13 @@ export default {
 
       const fileUrl = response.result.url;
       const fileName = response.result.title;
-      const mimeType = mime.lookup(fileName) || 'application/octet-stream';
+      const mimeType = mime.lookup(fileName) || "application/octet-stream";
 
       await conn.sendMessage(m.chat, {
         document: { url: fileUrl },
         mimetype: mimeType,
         fileName: fileName,
-        caption: `Title: ${response.result.title}\nUpload Date: ${response.result.uploaddate}\nLast Download Date: ${response.result.lastdownloaddate}\nFile Size: ${response.result.filesize}\nType: ${response.result.type}\nViews: ${response.result.views}\nDownloads: ${response.result.downloads}`
+        caption: `Title: ${response.result.title}\nUpload Date: ${response.result.uploaddate}\nLast Download Date: ${response.result.lastdownloaddate}\nFile Size: ${response.result.filesize}\nType: ${response.result.type}\nViews: ${response.result.views}\nDownloads: ${response.result.downloads}`,
       });
     } catch (err) {
       conn.logger.error(`Error fetching KrakenFiles:`, err);

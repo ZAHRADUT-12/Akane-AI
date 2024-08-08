@@ -17,7 +17,12 @@ export default {
 
     try {
       let response = await func.fetchJson(
-        API("arifzyn", "/download/douyin", { url: func.isUrl(url)[0] }, "apikey"),
+        API(
+          "arifzyn",
+          "/download/douyin",
+          { url: func.isUrl(url)[0] },
+          "apikey",
+        ),
       );
 
       if (response.status !== 200) {

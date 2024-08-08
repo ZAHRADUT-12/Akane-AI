@@ -11,8 +11,13 @@ export default {
       );
 
     try {
-      const result = API("arifzyn", "/ai/animediff", { prompt: text }, "apikey")
-      
+      const result = API(
+        "arifzyn",
+        "/ai/animediff",
+        { prompt: text },
+        "apikey",
+      );
+
       await m.reply(result);
     } catch (error) {
       await m.reply(func.format(error?.response?.data));

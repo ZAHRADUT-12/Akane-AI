@@ -14,17 +14,22 @@ export default {
       );
 
     await m.reply("wait");
-    
+
     try {
       let response = await func.fetchJson(
-        API("arifzyn", "/download/facebook", { url: func.isUrl(url)[0] }, "apikey"),
+        API(
+          "arifzyn",
+          "/download/facebook",
+          { url: func.isUrl(url)[0] },
+          "apikey",
+        ),
       );
-      
+
       if (response.status !== 200) {
-        m.reply(func.format(response))	
-      } 
-      
-      await conn.sendMedia(m.chat, response?.result?.sd?.link, m)
+        m.reply(func.format(response));
+      }
+
+      await conn.sendMedia(m.chat, response?.result?.sd?.link, m);
     } catch (err) {
       conn.logger.error(`Error fetching Instagram reel:`, err);
       return m.reply("An error occurred while fetching the Instagram reel.");

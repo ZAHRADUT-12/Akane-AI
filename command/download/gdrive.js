@@ -1,4 +1,4 @@
-import mime from 'mime-types';
+import mime from "mime-types";
 
 export default {
   command: ["gdrive", "drive"],
@@ -10,7 +10,7 @@ export default {
   run: async (m, { conn }) => {
     const url = m.text;
 
-    if (!func.isUrl(url)) 
+    if (!func.isUrl(url))
       return m.reply(
         `Invalid URL\n\nContoh: ${m.prefix + m.command} https://drive.google.com/file/d/1T1XFatQVZ1exnyb6cXOJN9r0RJoYepDt/view`,
       );
@@ -19,7 +19,12 @@ export default {
 
     try {
       let response = await func.fetchJson(
-        API("arifzyn", "/download/gdrive", { url: func.isUrl(url)[0] }, "apikey"),
+        API(
+          "arifzyn",
+          "/download/gdrive",
+          { url: func.isUrl(url)[0] },
+          "apikey",
+        ),
       );
 
       if (response.status !== 200) {
@@ -28,13 +33,16 @@ export default {
 
       const fileUrl = response.result.downloadUrl;
       const fileName = response.result.fileName;
-      const mimeType = response.result.mimetype || mime.lookup(fileName) || 'application/octet-stream';
+      const mimeType =
+        response.result.mimetype ||
+        mime.lookup(fileName) ||
+        "application/octet-stream";
 
       await conn.sendMessage(m.chat, {
         document: { url: fileUrl },
         mimetype: mimeType,
         fileName: fileName,
-        caption: `File Name: ${response.result.fileName}\nFile Size: ${(response.result.fileSize / (1024 * 1024)).toFixed(2)} MB\nMimetype: ${response.result.mimetype}`
+        caption: `File Name: ${response.result.fileName}\nFile Size: ${(response.result.fileSize / (1024 * 1024)).toFixed(2)} MB\nMimetype: ${response.result.mimetype}`,
       });
     } catch (err) {
       conn.logger.error(`Error fetching Google Drive file:`, err);
