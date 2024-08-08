@@ -69,6 +69,7 @@ export default class Database {
       if (!user.registered) {
         if (!isNumber(user.age)) user.age = 0;
         if (!("name" in user)) user.name = m.pushName;
+        if (!("gender" in user)) user.gender = "Unknown"
         if (!isNumber(user.regTime)) user.regTime = -1;
       }
 
@@ -95,6 +96,7 @@ export default class Database {
         afkReason: "",
         age: 0,
         registered: false,
+        gender: "Unknown",
         regTime: -1,
         warn: 0,
 
@@ -220,6 +222,7 @@ export default class Database {
       if (!("menfess" in datas)) datas.menfess = {};
       if (!("menfesschat" in datas)) datas.menfesschat = {};
       if (!("menfesschatcd" in datas)) datas.menfesschatcd = 0;
+      if (!("anonymous" in datas)) datas.anonymous = [];
       if (!("changelog" in datas)) datas.changelog = [];
       if (!("request" in datas)) datas.request = [];
       if (!("anime" in datas)) datas.anime = [];
@@ -228,6 +231,7 @@ export default class Database {
         menfess: {},
         menfesschat: {},
         menfesschatcd: 0,
+        anonymous: [],
         changelog: [],
         request: [],
         anime: [],

@@ -23,21 +23,21 @@ global.ucapan = Function.timeSpeech();
 global.func = Function;
 
 global.msg = {
-  owner: "Features can only be accessed owner!",
-  group: "Features only accessible in group!",
-  private: "Features only accessible private chat!",
-  admin: "Features can only be accessed by group admin!",
-  botAdmin: "Bot is not admin, can't use the features!",
-  bot: "Features only accessible by me",
-  premium: "Features only accessible by premium users",
-  media: "Reply media...",
-  query: "No Query?",
-  error:
-    "Seems to have encountered an unexpected error, please repeat your command for a while again",
-  quoted: "Reply message...",
-  wait: "Wait a minute...",
-  urlInvalid: "Url Invalid",
-  notFound: "Result Not Found!",
+  owner: "Fitur ini hanya dapat diakses oleh pemilik!",
+  group: "Fitur ini hanya dapat diakses di dalam grup!",
+  private: "Fitur ini hanya dapat diakses di chat pribadi!",
+  admin: "Fitur ini hanya dapat diakses oleh admin grup!",
+  botAdmin: "Bot bukan admin, tidak dapat menggunakan fitur ini!",
+  bot: "Fitur ini hanya dapat diakses oleh bot",
+  premium: "Fitur ini hanya dapat diakses oleh pengguna premium",
+  media: "Balas ke media...",
+  query: "Tidak ada query?",
+  error: "Sepertinya terjadi kesalahan yang tidak terduga, silakan ulangi perintah Anda beberapa saat lagi",
+  quoted: "Balas ke pesan...",
+  wait: "Tunggu sebentar...",
+  urlInvalid: "URL tidak valid",
+  notFound: "Hasil tidak ditemukan!",
+  register: "Anda belum terdaftar, silakan lakukan pendaftaran terlebih dahulu untuk menggunakan fitur ini.",
 };
 
 global.APIs = {
