@@ -6,15 +6,15 @@ import { fileURLToPath } from "url";
 import Function from "../system/lib/function.js";
 
 //—————「 Setings your bot 」—————//
-global.name = "Akane - Bot";
+global.name = "dez-bot";
 global.wm = "Copyright © 2024 AkaneBot";
 
 global.author = "Arifzyn";
 global.packname = "Created Sticker By";
 global.link = "https://akanebot.xyz";
 
-global.owner = ["6285691464024", "62895347198105", "6287760363490"];
-global.pairingNumber = "62856914640248";
+global.owner = ["6285795956409", "62895347198105", "6287760363490"];
+global.pairingNumber = "6285795956409";
 
 global.session = process.env.SESSION || "session";
 global.prefix = /^[°•π÷×¶∆£¢€¥®™+✓_=|/~!?@#%^&.©^]/i;
